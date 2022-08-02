@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file target-language="en" datatype="plaintext" original="messages" date="2021-06-18UTC12:28:060">
+        <header>
+            <authorName>Hebotek</authorName>
+            <authorEmail>support@hebotek.at</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="tx_news_domain_model_media.showinviews.1" xml:space="preserve">
+                <source>Als Headerbild anzeigen</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

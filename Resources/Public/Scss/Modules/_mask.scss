@@ -1,0 +1,93 @@
+// Title banner
+.mask_title_banner {
+    .tx_mask_title_banner {
+        color: $light-gray;
+        font-family: $font;
+        text-transform: uppercase;
+        font-weight: 400;
+        hyphens: auto;
+    }
+    .tx_mask_subtitle_banner {
+        color: $light-gray;
+        text-transform: uppercase;
+        font-size: $font-size-h2;
+        font-family: $font;
+        font-weight: 500;
+        hyphens: auto;
+    }
+    .tx_mask_link_banner {
+        text-decoration: underline;
+        font-family: $font;
+        font-weight: 700;
+        color: $light-gray;
+        font-size: 1.5rem;
+    }
+    .tx_mask_link_banner:hover {
+        text-decoration: underline;
+        color: $light-gray;
+    }
+}
+.mask_title_banner.frame-layout-1, .mask_title_banner.frame-layout-2 {
+    .tx_mask_title_banner {
+        color: $white;
+    }
+    .tx_mask_subtitle_banner {
+        color: $white;
+        text-transform: uppercase;
+    }
+    .tx_mask_link_banner {
+        color: $white;
+    }
+    .tx_mask_link_banner:hover {
+        color: $white;
+    }
+}
+.team-profile-data {
+    font-size: 0.8rem;
+}
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+.profile-image-container {
+    height: 475px;
+    width: 420ps;
+    overflow: hidden;
+}
+@include media-breakpoint-up(xs) {
+    .tx_mask_title_banner {
+        font-size: 15vw;
+        line-height: 17vw;
+    }
+}
+@include media-breakpoint-up(sm) {
+    .tx_mask_title_banner {
+        font-size: 7.5vw;
+        line-height:7.7vw;
+    }
+}
+@include media-breakpoint-up(md) {
+    .team-profile-container {
+        width: 100%;
+        position: unset;
+    }
+}
+@include media-breakpoint-up(lg) {
+    .team-profile-container {
+        width: 100%;
+        position: unset;
+    }
+}
+@include media-breakpoint-up(xl) {
+    .team-profile-container {
+        width: 67vw;
+        position: relative;
+    }
+}

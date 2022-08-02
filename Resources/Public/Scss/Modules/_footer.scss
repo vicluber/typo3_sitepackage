@@ -1,0 +1,48 @@
+.top-footer .frame-type-text > div > p {
+	font-size: 1.2rem !important;
+	font-weight: 500 !important;
+}
+.top-footer h5 {
+	font-size: .8rem;
+	font-weight: 700;
+}
+.top-footer header {
+    font-family: BrandonGrotesque;
+    font-weight: 700;
+    font-size: .7rem;
+    color: #5a5546;
+}
+.top-footer img {
+	display: inline-block;
+    max-height: 50px;
+    padding-right: 32px;
+    width: auto;
+}
+.top-footer .news-slider {
+	width: 100%;
+    margin-left: 0;
+	margin-right: 0;
+	img {
+		display: unset;
+	    max-height: 120px;
+	    margin-right: unset;
+	}
+}
+.middle-footer {
+	.frame-type-text {
+		color: $white;
+	}
+	figure.image {
+		text-align: left !important;
+	}
+	a {
+		color: $white;
+		text-decoration: underline;
+	}
+	a:hover {
+		color: $primary-color;
+	}
+}
+.frame-type-menu_subpages ul {
+	padding-left: 0px;
+}

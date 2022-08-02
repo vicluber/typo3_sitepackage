@@ -1,0 +1,9 @@
+companyDetails {
+    name = suedbahnhotel 
+    streetName = Muster-Straße
+    streetNumber = 11
+    zip = A-1110
+    city = Wien
+    tel = +43 (0)111111
+    email = office@hebotek.at
+}

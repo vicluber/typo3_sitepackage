@@ -1,0 +1,5 @@
+lib.maskContentElement {
+   layoutRootPaths.30 = EXT:suedbahnhotel_website/Resources/Private/Layouts
+   partialRootPaths.30 = EXT:suedbahnhotel_website/Resources/Private/Partials
+   templateRootPaths.30 = EXT:suedbahnhotel_website/Resources/Private/Templates
+}

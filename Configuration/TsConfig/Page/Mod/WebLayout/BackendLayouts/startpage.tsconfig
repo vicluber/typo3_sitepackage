@@ -1,0 +1,39 @@
+#
+# BACKENDLAYOUT: DEFAULT
+#
+mod {
+    web_layout {
+        BackendLayouts {
+            startpage {
+                title = LLL:EXT:suedbahnhotel_website/Resources/Private/Language/locallang_be.xlf:backend_layout.startpage
+                config {
+                	backend_layout {
+						colCount = 4
+						rowCount = 1
+				        
+						rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Header
+                                        colPos = 0
+                                        colspan = 3
+                                    }
+                                }
+                            }
+                            2 {
+                                columns {
+                                    1 {
+                                        name = Main
+                                        colPos = 10
+                                        colspan = 3
+                                    }
+                                }
+                            }
+                        }
+					}
+                }
+            }
+        }
+    }
+}

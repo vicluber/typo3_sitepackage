@@ -1,0 +1,66 @@
+##########################
+#### CONTENT ELEMENTS ####
+##########################
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:suedbahnhotel_website/Configuration/TsConfig/Page/ContentElement/Element" extensions="tsconfig">
+
+# Frames
+TCEFORM.tt_content.frame_class {
+  removeItems = ruler-before, ruler-after, indent, indent-left, indent-right, none
+
+  addItems {
+    container-break-out = Container break-out
+  }
+}
+
+# Alignments
+TCEFORM.tt_content.imageorient {
+  addItems {
+    220 = Slider
+  }
+}
+
+# Space before
+TCEFORM.tt_content.space_before_class {
+  removeItems = extra-small, extra-large
+
+  altLabels {
+    small = Small (80px)
+    medium = Medium (100px)
+    large = Large (160px)
+  }
+
+  addItems {
+    no-space = No Space
+  }
+}
+
+# Space after
+TCEFORM.tt_content.space_after_class {
+  removeItems = extra-small, extra-large
+
+  altLabels {
+    small = Small (80px)
+    medium = Medium (100px)
+    large = Large (160px)
+  }
+
+  addItems {
+    no-space = No Space
+  }
+}
+
+# Headings
+TCEFORM.tt_content.header_layout {
+  altLabels {
+    1 = H1
+    2 = H2
+    3 = H3
+    4 = H4
+    5 = H5
+  }
+}
+
+# Image orient
+#TCEFORM.tt_content.imageorient {
+#  removeItems = 1, 2, 9, 10, 17, 18
+#}

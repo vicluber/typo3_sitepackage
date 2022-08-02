@@ -1,0 +1,119 @@
+# include definition of TrackingObjects
+@import 'EXT:cookieman/Configuration/TypoScript/TrackingObjects/*.typoscript'
+
+plugin.tx_cookieman.settings {
+    trackingObjects {
+      GoogleMaps {
+        inject (
+          
+        )
+      }
+
+      GoogleTagManager {
+        inject(
+
+        )
+      }
+
+      FacebookPixel {
+        inject(
+
+        )
+      }
+
+      HubSpot {
+        inject(
+        )
+
+        #show {
+          # each element here represents one line of information in the consent popup
+         # __hstc {
+          #  duration = 13
+          #  durationUnit = months
+          #  type = tracking
+          #  provider = HubSpot
+          #}
+
+          #hubspotutk {
+          #  duration = 13
+          #  durationUnit = months
+          #  type = tracking
+          #  provider = HubSpot
+          #}
+        #}
+      }
+    }
+
+    groups {
+
+        external {
+            trackingObjects {
+                0 = GoogleMaps
+            }
+
+            respectDnt = 1
+            showDntMessage = 1
+        }
+
+        marketing {
+          trackingObjects {
+            0 = FacebookPixel
+          }
+
+          respectDnt = 1
+          showDntMessage = 1
+        }
+    }
+}
+
+plugin.tx_cookieman._LOCAL_LANG {
+    en {
+        group\.statistics = Statistics
+
+        group\.external = External Content
+        
+        group\.marketing = Marketing
+
+        group\.analytics = Analytics
+        group\.analytics\.desc = Dies sind nicht unbedingt notwendige Cookies, die vom Cookie-Banner gesteuert werden. Wenn Sie ein Besucher auf einer von HubSpot unterstützten Website sind, können Sie sich von diesen Cookies abmelden, indem Sie keine Einwilligung erteilen.
+
+
+        type\.navigation = Navigation
+        type\.tracking = Tracking
+
+        # cookie descriptions
+    }
+    de {
+        group\.statistics = Statistik
+
+        group\.external = Externer Content
+
+        group\.marketing = Marketing
+
+        group\.analytics = Analytics
+        group\.analytics\.desc = Dies sind nicht unbedingt notwendige Cookies, die vom Cookie-Banner gesteuert werden. Wenn Sie ein Besucher auf einer von HubSpot unterstützten Website sind, können Sie sich von diesen Cookies abmelden, indem Sie keine Einwilligung erteilen.
+
+        type\.navigation = Navigation
+        type\.tracking = Tracking
+
+        # cookie descriptions
+    }
+    default < .en
+}
+
+page {
+  1365499 = FLUIDTEMPLATE
+  1365499 {
+    templateName = Popup
+
+    templateRootPaths {
+      300 = EXT:suedbahnhotel_website/Resources/Private/Templates/Cookieman/
+    }
+    partialRootPaths {
+      300 = EXT:suedbahnhotel_website/Resources/Private/Partials/Cookieman/
+    }
+    layoutRootPaths {
+      300 = EXT:suedbahnhotel_website/Resources/Private/Layouts/Cookieman/
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.icon-facebook {
+    mask: url("/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/awesome-facebook.svg");
+}
+.icon-instagram {
+    mask: url("/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/feather-instagram.svg");
+}
+.icon-tiktok {
+    mask: url("/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/simple-tiktok.svg");
+}
+.icon-linkedin {
+    mask: url("/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/awesome-linkedin.svg");
+}
+.icon-spotify {
+    mask: url("/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/simple-spotify.svg");
+}
+.icon-pinterest {
+    mask: url("/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/awesome-pinterest-square.svg");
+}
+.icon-hamburger {
+    mask: url("/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/hamburger.svg");
+}
+.icon-search {
+    mask: url("/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/search.svg");
+}
+.icon-calendar {
+    mask: url("/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/calendar.svg");
+}
+.icon-close {
+    mask: url("/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/close.svg");
+}
+.icon {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: $white;
+    mask-size: cover;
+}
+.icon:hover,
+.icon:focus {
+    background: $primary-color;
+}
+.icon-primary {
+    background: $primary-color !important;
+}
+.icon-black {
+    background: $black !important;
+}
+.icon-md {
+    width: 25px !important;
+    height: 25px !important;
+}

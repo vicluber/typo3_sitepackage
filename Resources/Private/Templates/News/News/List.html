@@ -1,0 +1,134 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+	<!--TYPO3SEARCH_end-->
+	<f:if condition="{news}">
+		<f:then>
+			<f:if condition="{pageData.backend_layout} == pagets__overview">
+				<f:then>
+					<div class="news-list-overview container-fluid p-0" id="news-container-{contentObjectData.uid}">
+						<f:if condition="{settings.hidePagination}">
+							<f:then>
+								<!-- grouped news items -->
+                                <hb:newsGroupedByDate each="{news}" as="groupedNews" groupBy="datetime" format="MY" groupKey="month">
+                                    <div class="month-group">
+                                        <div class="py-3">
+											<span class="h1 fw-300">{month -> f:format.date(format: '%B')} {month -> f:format.date(format: '%Y')}
+											</span>
+										</div>
+                                        <f:for each="{groupedNews}" as="newsItem" iteration="iterator">
+                                            <f:if condition="{newsItem.isEvent}">
+                                                <f:then>
+                                                    <f:render partial="List/EventItemOverview" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                                </f:then>
+                                                <f:else>
+                                                    <f:render partial="List/NewsItemOverview" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                                </f:else>
+                                            </f:if>
+                                        </f:for>
+                                    </div>
+                                </hb:newsGroupedByDate>
+                                <!-- grouped news items - end -->
+							</f:then>
+							<f:else>
+
+                                <!-- paginated news items -->
+                                <hb:newsGroupedByDate each="{pagination.paginator.paginatedItems}" as="groupedNews" groupBy="datetime" format="MY" groupKey="month">
+                                    <div class="month-group">
+                                        
+                                            <div class="py-3">
+												<span class="h1 fw-300">{month -> f:format.date(format: '%B')} {month -> f:format.date(format: '%Y')}
+												</span>
+											</div>
+                                            <f:for each="{groupedNews}" as="newsItem" iteration="iterator">
+                                                <f:if condition="{newsItem.isEvent}">
+                                                    <f:then>
+                                                        <f:render partial="List/EventItemOverview" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                                    </f:then>
+                                                    <f:else>
+                                                        <f:render partial="List/NewsItemOverview" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                                    </f:else>
+                                                </f:if>
+                                            </f:for>
+                                        </div>
+                                </hb:newsGroupedByDate>
+                                <!-- paginated news items - end -->
+
+                                <!-- pagination -->
+                                <f:if condition="{settings.list.paginate.insertBelow}">
+                                    <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+                                </f:if>
+                                <!-- pagination - end -->
+							</f:else>
+						</f:if>
+					</div>
+				</f:then>
+				<f:else>
+					<div class="news-list-startpage" id="news-container-{contentObjectData.uid}">
+						<f:if condition="{settings.hidePagination}">
+							<f:then>
+								<f:for each="{news}" as="newsItem" iteration="iterator">
+									<f:if condition="{newsItem.isEvent}">
+										<f:then>
+											<div class="container p-0 p-sm-4">
+												<div class="row">
+													<f:for each="{news}" as="newsItem" iteration="iterator">
+														<f:render partial="List/EventItemStartpage" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+													</f:for>
+												</div>
+											</div>
+										</f:then>
+										<f:else>
+											<f:render partial="List/NewsItemStartpage" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+										</f:else>
+									</f:if>
+								</f:for>
+							</f:then>
+							<f:else>
+								<f:if condition="{settings.list.paginate.insertAbove}">
+									<f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+								</f:if>
+								<f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+									<f:if condition="{newsItem.isEvent}">
+										<f:render partial="List/NewsItemStartpage" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+									</f:if>
+								</f:for>
+								<div class="container">
+									<div class="row">
+										<f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+											<f:if condition="{newsItem.isEvent}">
+												<f:render partial="List/EventItemStartpage" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+											</f:if>
+										</f:for>
+									</div>
+								</div>
+								<f:if condition="{settings.list.paginate.insertBelow}">
+									<f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+								</f:if>
+							</f:else>
+                        </f:if>
+                        <f:if condition="{settings.eventRestriction} == 1">
+                            <div class="link-to-events-list">
+                                <f:link.page class="text-black fw-700" pageUid="{settings.listPid}">
+                                    <f:translate key="LLL:EXT:suedbahnhotel_website/Resources/Private/Language/de.locallang.xlf:frontend_layout.link_to_events_list" />
+                                </f:link.page>
+                            </div>
+                        </f:if>
+					</div>
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<div class="no-news-found">
+				<f:translate key="LLL:EXT:suedbahnhotel_website/Resources/Private/Language/de.locallang.xlf:list_nonewsfound" />
+			</div>
+		</f:else>
+	</f:if>
+</f:section>

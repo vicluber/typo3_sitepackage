@@ -1,0 +1,89 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true"
+	  xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+<f:layout name="Default" />
+<f:section name="Main">
+    
+    <div class="thumbnail-menu">
+		<f:if condition="{data.pages}">
+			<f:then>
+				<f:render section="specificPages" arguments="{pages: data.pages}" />
+			</f:then>
+			<f:else>
+				<f:render section="subpages" arguments="{rootPid: data.pid}" />
+			</f:else>
+		</f:if>
+    </div>
+    
+</f:section>
+
+<!-- List all subpages of current page -->
+<f:section name="subpages">
+	<!-- Subpages -->
+	<v:menu pageUid="{rootPid}" classActive="" classCurrent="active" as="submenu">
+		<ul class="list-unstyled row">
+			<f:for each="{submenu}" as="subMenuPage">
+				<li class="{subMenuPage.class} col-sm-12 col-md-6 col-lg-4 p-2">
+					<f:link.page pageUid="{subMenuPage.uid}" title="{subMenuPage.linktext}" class="nav-link">
+						<div class="card bg-dark card-suedbahnhotel text-white rounded-0">
+							<f:render section="getFirstImageOfPage" arguments="{pid: subMenuPage.uid}" />
+							<div class="card-img-overlay d-flex flex-column">
+								<div class="mt-auto ps-5">
+									<h4 class="card-suedbahnhotel-title fw-700 text-uppercase">
+										{subMenuPage.title}
+									</h4>
+								</div>
+								<div class="ps-5">
+									<p class="card-text">{subMenuPage.subtitle}</p>
+								</div>
+							</div>
+						</div>
+
+					</f:link.page>
+				</li>
+			</f:for>
+		</ul>
+	</v:menu>
+</f:section>
+
+<!-- List specific pages -->
+<f:section name="specificPages">
+	<ul class="list-unstyled row">
+		<f:for each="{pages -> v:iterator.explode(glue: ',')}" as="pageUid" iteration="iter">
+			<li class="col-12 col-md-6 col-lg-4">
+				<f:link.page pageUid="{pageUid}" title="" class="nav-link">
+
+					<div class="card bg-dark card-suedbahnhotel text-white">
+						<f:render section="getFirstImageOfPage" arguments="{pid: pageUid}" />
+						<div class="card-img-overlay">
+							<h2 class="card-suedbahnhotel-title">
+								{v:page.info(pageUid : pageUid, field: 'title')}
+							</h2>
+							<p class="card-text">{v:page.info(pageUid : pageUid, field: 'subtitle')}</p>
+						</div>
+					</div>
+
+				</f:link.page>
+			</li>
+
+		</f:for>
+	</ul>
+</f:section>
+
+
+<!-- Get first image of page with Pid "pid" -->
+<f:section name="getFirstImageOfPage">
+	<v:page.resources.fal table="pages" field="media" uid="{pid}" as="images" slide="-1">
+
+		<f:for each="{images}" as="image" iteration="iter">
+			<f:if condition="{iter.isFirst}">
+				<f:image src="{image.url}" class="card-img object-fit-cover" alt="{image.alternative} {image.name}" title="{image.title}" maxWidth="{settings.media.maxThumbnailMenuWidth}" maxHeight="{settings.media.maxHeight}"/>
+				<div class="copyright" data-slider-item-index="1">
+					<span class="image-copyright">&copy; Foto: {image.copyright}</span>
+				</div>
+			</f:if>
+		</f:for>
+
+	</v:page.resources.fal>
+</f:section>
+
+</html>

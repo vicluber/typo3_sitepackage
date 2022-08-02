@@ -1,0 +1,177 @@
+@include media-breakpoint-up(xs) {
+	.news-slider {
+	    width: 100%;
+	}
+}
+@include media-breakpoint-up(sm) {
+	.news-slider {
+	    width: 100%;
+	}
+}
+@include media-breakpoint-up(md) {
+	.news-slider {
+	    width: 100%;
+	    margin-left: none;
+    	margin-right: none;
+	}
+}
+@include media-breakpoint-up(lg) {
+	.news-slider {
+	    width: 190%;
+	    margin-left: -45%;
+    	margin-right: -45%;
+	}
+}
+@include media-breakpoint-up(xl) {
+	.news-slider {
+	    width: 160%;
+	    margin-left: -30%;
+    	margin-right: -30%;
+	}
+}
+@include media-breakpoint-up(xxl) {
+	.news-slider {
+	    width: 160%;
+	    margin-left: -30%;
+    	margin-right: -30%;
+	}
+}
+.news-slider {
+    height: auto;
+    //margin-bottom: $grid-gutter-width;
+    overflow: hidden;
+    
+    // slider item - general
+    .item {
+	    height: auto; 
+		position: relative; 
+		opacity: 0.4;
+		padding: 0px 10px;
+	}
+	// set opacity for active slider item
+	.item.slick-center {
+    	opacity: 1;
+	}
+
+	// if there is no slide
+	&.no-slide {
+		height: auto;
+	    width: 43.4%;
+	    float: left;
+	    margin-right: 20px;
+	    margin-bottom: 9px;
+	    margin-top: 7px;
+	
+		// wide screen mode
+		&.wide-screen {
+			width: 100%;
+    	}
+	
+    	.item {
+			opacity: 1;
+			
+			.caption {
+				left: 0;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				
+	    		padding: 0;
+    		}
+		}
+	}
+	
+	// image caption - general
+	.item .caption {
+	    position: absolute;
+	    bottom: 0;
+	    left: .5em;
+	    font-size: .85em;
+	    line-height: 1;
+	    color: #f1f1f1;
+	    padding: .4em;
+	    margin: 0 0 0 1em;
+	    background-color: rgba(78, 78, 78, 0.8);
+	}
+	// image caption - center item
+	.item.slick-center .caption {
+    	left: 3em;
+		margin-right: 3em;
+	}
+
+	// Arrows
+	button.slick-next,
+	button.slick-next:hover {
+	    position: absolute;
+	    top: 50%;
+	    right: 15px;
+	    width: 47px;
+	    height: 75px;
+	}
+	
+	button.slick-prev,
+	button.slick-prev:hover {
+	    position: absolute;
+	    top: 50%;
+	    left: 15px;
+	    z-index: 100;
+	    width: 47px;
+	    height: 75px;
+	}
+	
+	.slick-prev:before,
+	.slick-next:before {
+	    width: 100%;
+	    height: 100%;
+	    font-size: 30px;
+	    color: $black;
+	    line-height: inherit;
+	    font-weight: bold;
+	}
+	
+	// reset default arrows
+	.slick-prev:before {
+		background-image: url(/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/arrow-left.svg);
+	    background-size: 40px 40px;
+	    display: inline-block;
+	    width: 40px;
+	    height: 40px;
+	    content:"";
+	}
+	.slick-next:before {
+	    background-image: url(/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/arrow-right.svg);
+	    background-size: 40px 40px;
+	    display: inline-block;
+	    width: 40px;
+	    height: 40px;
+	    content:"";
+	}
+}
+
+// Captions
+.news-slider-captions {
+	// Title & Copyright
+	.image-title-wrapper {
+		display: flex;
+		align-items: center;
+		
+		padding-top: 10px;
+			
+		width: auto; //to align copyright
+		
+		.image-title {
+			width: auto;
+		}
+		
+		@include media-breakpoint-down(md){
+			flex-direction: column;
+			align-items: flex-start;
+			
+			.image-copyright {
+				margin-left: 0;
+			}
+		}
+	}
+	
+}

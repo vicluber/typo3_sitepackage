@@ -1,0 +1,668 @@
+/**
+ * Start Styling
+ */
+html {
+	font-size: 25px;
+}
+body {
+	overflow-x: hidden;
+	color: $font-color;
+	font-family: $font;
+}
+
+h1, .h1 {
+	font-size: $font-size-h1;
+	font-family: $font;
+	text-transform: uppercase;
+	font-weight: 500;
+	hyphens: auto;
+}
+
+h2, .h2 {
+	font-size: $font-size-h2;
+	font-family: $font;
+	font-weight: 700;
+	hyphens: auto;
+}
+
+h3, .h3 {
+	font-size: $font-size-h3;
+	font-family: $font;
+	font-weight: 700;
+	hyphens: auto;
+	text-transform: uppercase;
+}
+
+h4, .h4 {
+	font-size: $font-size-h4;
+	font-family: $font;
+	hyphens: auto;
+}
+
+h5, .h5 {
+	font-size: $font-size-h5;
+	font-family: $font;
+	hyphens: auto;
+}
+
+a {
+	color: $black;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: $black;
+}
+
+.text-gray {
+	color: $light-gray;
+}
+
+.bg-primary {
+	background-color: $primary-color !important;
+}
+
+.bg-secondary {
+	background-color: $secondary-color !important;
+}
+
+.bg-terthiary {
+	background-color: $terthiary-color !important;
+}
+
+.fw-300 {
+	font-weight: 300;
+}
+
+.fw-400 {
+	font-weight: 400;
+}
+
+.fw-500 {
+	font-weight: 500;
+}
+
+.fw-700 {
+	font-weight: 700;
+}
+
+.fs-bigger {
+	font-size: 1.5rem;
+}
+
+// Overwriting bootstrap default styles
+ .btn:focus {
+ 	box-shadow: none;
+}
+.page-link:focus {
+	box-shadow: none;
+}
+.startpage-main-content > .container-fluid {
+	overflow: hidden;
+}
+.form-control:focus {
+	box-shadow: none;
+}
+
+// Set this id to the container of the image that needs to be cutted
+#img-diag-cut {
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
+    position: relative;
+}
+#img-diag-cut-header {
+	-webkit-clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
+    position: relative;
+}
+#video-diag-cut-header {
+	-webkit-clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
+    position: relative;
+	height: 100vh;
+}
+
+.container-break-out,
+.frame-container-break-out {
+	width: 100vw;
+    position: relative;
+    left: calc(-1 * (100vw - 100%)/ 2);
+}
+@include media-breakpoint-up(xs) {
+	html {
+		font-size: 16px;
+	}
+	.sideNavBar {
+		width: 100%;
+		padding-top: 0px !important;
+	    padding-right: 0px !important;
+	}
+    .startpage-main-content {
+		background-color: $white;
+		margin-top: unset;
+	}
+	.header-image-container {
+		.header-image {
+			height: 100%;
+		}
+	}
+	/*
+	#img-diag-cut {
+		height: calc(100vh - 300px);
+	}
+	*/
+	#img-diag-cut-header {
+		height: 70vh;
+	}
+	.main-content .ce-gallery, .startpage-main-content .ce-gallery {
+		width: 100vw;
+        position: relative;
+        left: calc(-1 * (100vw - 100%)/ 2);
+	}
+}
+@include media-breakpoint-up(sm) {
+	.sideNavBar {
+		width: 100%;
+	}
+	html {
+		font-size: 16px;
+	}
+    .startpage-main-content {
+		background-color: $primary-color;
+		margin-top: -170px;
+	}
+	.header-image-container {
+		.header-image {
+			height: 100%;
+		}
+	}
+	#img-diag-cut-header {
+		height: 100vh;
+	}
+	.main-content .ce-gallery, .startpage-main-content .ce-gallery {
+		width: unset;
+        position: unset;
+        left: unset;
+	}
+}
+@include media-breakpoint-up(md) {
+	.sideNavBar {
+		width: 50%;
+	}
+	html {
+		font-size: 18px;
+	}
+	#img-diag-cut-header {
+		height: 100vh;
+	}
+}
+@include media-breakpoint-up(lg) {
+	.sideNavBar {
+		width: 50%;
+	}
+	html {
+		font-size: 20px;
+	}
+	#img-diag-cut-header {
+		height: 100vh;
+	}
+}
+@include media-breakpoint-up(xl) {
+	.sideNavBar {
+		width: 50%;
+	}
+	html {
+		font-size: 25px;
+	}
+	#img-diag-cut-header {
+		height: 100vh;
+	}
+}
+@include media-breakpoint-up(xxl) {
+	.sideNavBar {
+		width: 50%;
+	}
+	html {
+		font-size: 25px;
+	}
+	#img-diag-cut-header {
+		height: 100vh;
+	}
+}
+.main-header {
+	z-index: 1000;
+    height: 170px;
+	width: 100%;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+	.logo-image {
+		height: 100%;
+		width: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}
+.startpage-main-content {
+
+	.header-badge {
+		position: absolute;
+	    top: -200px;
+	    right: 130px;
+	    -webkit-transition: all 0.5s ease;
+	    -moz-transition: all 0.5s ease;
+	    -o-transition: all 0.5s ease;
+	    transition: all 0.5s ease;
+	}
+	.header-badge:hover {
+		transform: rotate(30deg);
+	}
+	@include media-breakpoint-down(md) {
+		.header-badge {
+			transform:scale(0.4);
+			right:0;
+			&:hover {
+				transform:scale(0.5);
+			}
+		}
+	}
+}
+.mobile-main-header {
+	z-index: 1000;
+    height: 130px;
+	width: 100%;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+	.mobile-logo-image {
+		height: 100%;
+		width: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}
+
+.header-image-container {
+	position: relative;
+	.header-image-title {
+		z-index: 100;
+		position: absolute;
+		font-weight: 500;
+		bottom: -80vh;
+		color: $white;
+	}
+	.header-image-subtitle {
+		z-index: 100;
+		position: absolute;
+		bottom: -90vh;
+		color: $white;
+	}
+	
+	.header-button {
+		position: absolute;
+		z-index: 100;
+		bottom: -62vh;
+		> a {
+			color: $white;
+			background-color: rgba(0, 0, 0, 0.61);
+			backdrop-filter: blur(5px);
+			text-decoration: none;
+			padding: 20px 26px;
+			font-weight: bold;
+			border: 1px solid rgba(249, 219, 126, 0.61);
+		}
+	}
+	.header-image {
+		width: 100%;
+		object-fit: cover;
+	}
+	.video-embed-item {
+		width: 100%;
+	    object-fit: cover;
+	    height: 100vh;
+	}
+}
+.header-button-mobile {
+	background-color: rgba(0,0,0,.61);
+	color: $white;
+	font-size: 1rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+.nav-sticky {
+	background-color: rgba(0, 0, 0, .5);
+	height: 120px;
+}
+.sideNavBar {
+	#menu .nav-item {
+		opacity: 0;
+	}
+	border: none !important;
+	background-color: $primary-color;
+	padding-top: 65px;
+    padding-right: 140px;
+	.sidebar-main-menu {
+		margin: auto;
+		width: 45%;
+		list-style-type: none;
+		li a {
+			color: $font-color;
+			font-family: $font;
+			font-size: 1.4rem;
+			font-weight: 500;
+			text-decoration: none;
+			padding-left: 30px;
+		}
+
+		li a:hover {
+			text-decoration: underline;
+			color: $font-color;
+		}
+	}
+	.sidebar-submenu {
+		margin: auto;
+		width: 45%;
+		list-style-type: none;
+		padding: 0px !important;
+		li a {
+			color: $font-color;
+			font-family: $font;
+			font-weight: 500;
+			text-decoration: none;
+			padding-left: 30px;
+		}
+
+		li a:hover {
+			text-decoration: underline;
+			color: $font-color;
+		}
+	}
+}
+.middle-footer {
+	background-color: $dark;
+	p {
+		font-size: $font-size-small;
+	}
+	ul {
+		list-style: none;
+		padding-left: 110px;
+		li {
+			line-height: 2rem;
+			a {
+				color: $white;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-size: $font-size-small;
+				font-family: $font;
+			}
+		}
+	}
+}
+.bottom-footer {
+	background-color: $primary-color;
+	p {
+		padding: 8px;
+		margin: 0px;
+		font-size: $font-size-very-small;
+		font-weight: 300;
+		padding-top: 14px;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-inline-start: 0px !important;
+		li {
+			display: inline;
+			padding-left: 20px;
+			a {
+				color: $font-color;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-size: $font-size-very-small;
+				font-weight: 300;
+			}
+		}
+	}
+}
+
+.top-footer {
+	background-color: $secondary-color;
+	.font-style-4 {
+		font-family: $font;
+		font-weight: 700;
+		font-size: $font-size-small;
+		color: $dark;
+	}
+	.ce-gallery .ce-row {
+		display: flex!important;
+		.ce-column {
+			flex: 1 1 auto!important;
+			-webkit-box-flex: 1!important;
+		}
+	}
+}
+
+
+// Typo3 classes set by in the backend
+.ce-headline-center {
+	text-align: center;
+}
+.ce-headline-left {
+	text-align: left;
+}
+.ce-headline-right {
+	text-align: right;
+}
+.frame-layout-3 {
+	background-color: none;
+}
+
+.frame-layout-2 {
+	background-color: $green;
+}
+
+.frame-layout-1 {
+	background-color: $orange;
+}
+.frame-layout-0 {
+	background-color: none;
+}
+
+
+.frame-space-before-small {
+	margin-top: $spaces-small;
+}
+.frame-space-after-small {
+	margin-bottom: $spaces-small;
+}
+.frame-space-before-medium {
+	margin-top: $spaces-medium;
+}
+.frame-space-after-medium {
+	margin-bottom: $spaces-medium;
+}
+.frame-space-before-large {
+	margin-top: $spaces-large;
+}
+.frame-space-after-large {
+	margin-bottom: $spaces-large;
+}
+
+span.menu-word {
+	font-size: 1.2rem;
+    font-family: BrandonGrotesque;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.image-copyright {
+	left: 20px;
+	font-size: .5rem;
+	bottom: 30px;
+	color: $white;
+	position: absolute;
+	left: 20px;
+	-webkit-transform: rotate(-90deg);
+	-webkit-transform-origin: left top;
+	-moz-transform: rotate(-90deg);
+	-moz-transform-origin: left top;
+	-ms-transform: rotate(-90deg);
+	-ms-transform-origin: left top;
+	-o-transform: rotate(-90deg);
+	-o-transform-origin: left top;
+	transform: rotate(-90deg);
+	transform-origin: left top;
+}
+.file-copyright {
+	font-size: .5rem;
+	color: $white;
+	position: absolute;
+    bottom: 150px;
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+}
+.home-video-link-image {
+	.play-icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.video-thumbnail {
+		width: 100%;
+		height: auto;
+	}
+}
+.primary-button {
+	border: 1px solid #777054;
+	font-family: $font!important;
+	font-weight: 700;
+	background-color: #fff4c9!important;
+	display: inline-block;
+	padding: 20px 25px;
+	color: $black;
+	text-decoration: none;
+}
+.primary-button:hover {
+	color: $black;
+}
+
+//Default content elements styles
+
+.btn-outline-danger {
+    color: $red !important;
+    border-color: $red;
+    border-radius: 0px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: $font;
+    padding: .9rem 1.8rem;
+}
+.btn-outline-danger:hover {
+    color: $white !important;
+}
+blockquote {
+	font-weight: 500;
+	font-size: 2rem;
+	line-height: 2.7rem;
+	width: 70%;
+	margin-left: 100px;
+}
+blockquote > p:before {
+	content: url(/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/apostroph.svg);
+	background-size: 100px 70px;
+    display: inline-block;
+    width: 100px;
+    height: 70px;
+    margin-left: -100px;
+    padding-right: 30px;
+}
+
+.ce-bodytext > p > a {
+	color: $black;
+}
+.ce-bodytext > p > a:hover {
+	color: $black;
+}
+
+.text-justify {
+	text-align: justify;
+}
+.ce-left.ce-intext .image-embed-item {
+	float: left;
+    margin: 0px 50px 0 0px;
+	width: 50%;
+    height: auto;
+}
+.ce-right.ce-intext .image-embed-item {
+	float: right;
+    margin: 0px 0px 0 50px;
+	width: 50%;
+    height: auto;
+}
+.ce-right.ce-intext .image-caption {
+
+	float: right;
+	width: 50%;
+	clear: right;
+	margin: 0 0 50px 50px;
+	font-size: .8rem;
+
+}
+.ce-left.ce-intext .image-caption {
+	float: left;
+	width: 50%;
+	clear: left;
+	margin: 0 50px 50px 0;
+	font-size: .8rem;
+}
+.image-caption {
+	color: $black;
+	line-height: 20px;
+	font-size: .8rem;
+	font-weight: 700;
+	padding-top: 10px;
+}
+.ce-above figure.image, .ce-below figure.image {
+	text-align: center;
+}
+.frame-type-text, .frame-type-textmedia, .frame-type-textpic {
+	ul {
+		padding-left: 0rem;
+		li {
+			list-style: none;
+			margin-left: 30px;
+		}
+		li:before {
+			background-image: url(/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/list-arrow-right.svg);
+			content: '';
+			display: inline-block;
+			height: 15px;
+			width: 15px;
+			margin-left: -30px;
+			margin-right: 15px;
+		}
+	}
+}
+
+.object-fit-cover {
+	object-fit: cover;
+}
+.card-img-overlay > div > p.card-text {
+	line-height: 25px;
+    font-weight: 700;
+}
+.top-footer .frame-type-text > p {
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+// Applying same styles from .active to .current for pagination
+.page-item.current {
+	@extend .page-item.active;
+}

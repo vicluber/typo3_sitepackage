@@ -1,0 +1,60 @@
+
+.rgaccord1-content {
+	background-color: $textpic-background-color;
+	padding: 20px;
+  margin-top: 10px;
+}
+.rgaccord1-nest{
+    width:100%;
+    /*border:1px solid #AAA;*/
+    display:block;
+    padding:5px;
+    margin:2px;
+    cursor: pointer;
+}
+
+.toogle-icon {
+    float:right;
+    background-image: url('/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/pfeil_kreis-light-red.svg');
+	background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+    width: 1rem; 
+    height: 1.05rem;
+    content:"";
+}
+.toogle-icon.open {
+	background-image: url('/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/pfeil_kreis-red.svg');
+	animation-name: rotateIconOpen;
+	animation-duration: .7s;
+	transform: rotate(180deg);
+}
+.toogle-icon.close {
+	background-image: url('/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/pfeil_kreis-light-red.svg');
+	animation-name: rotateIconClose;
+	animation-duration: .7s;
+	transform: rotate(0deg);
+}
+@-webkit-keyframes rotateIconOpen {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes rotateIconClose {
+  from {
+    -webkit-transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+  }
+}
+.dotted-line {
+    border:none;
+    border-bottom:1px dotted $dark-red;
+    display:inline-block;
+}
+.rgaccord1-toggle {
+	color: $dark-red;
+}

@@ -1,0 +1,45 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+	<div class="news-slider-wrapper">
+		<div class="news-slider wide-screen">
+			<div class="items">
+				<f:for each="{mediaElements}" as="image" iteration="iter">
+					<f:if condition="{image.showinpreview} == 0">
+						<div class="item" data-slider-item-index="{iter.index}">
+							<f:image image="{image}" title="{image.title}" alt="{image.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.detail.media.image.maxWidth)}"
+							maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.detail.media.image.maxHeight)}"/>
+							<div class="copyright" data-slider-item-index="{iter.index}">
+								<f:if condition="{image.originalResource.properties.copyright}">
+									<span class="image-copyright">&copy; {image.originalResource.properties.copyright}</span>
+								</f:if>
+							</div>
+						</div>
+					</f:if>
+				</f:for>
+			</div>
+	    </div>
+	    <div clasS="news-slider-captions">
+		    <f:for each="{mediaElements}" as="image" iteration="iter">
+				<f:if condition="{image.showinpreview} == 0">
+					<f:if condition="{image.description}">
+						<f:then>
+							<div class="caption" data-slider-item-index="{iter.index}">
+								<div class="image-title-wrapper">
+									<span class="image-title">{image.description}</span>
+								</div>
+							</div>
+						</f:then>
+						<f:else>
+							<div class="caption" data-slider-item-index="{iter.index}">
+								<div class="image-title-wrapper">
+									<span class="image-title">&nbsp;</span>
+								</div>
+							</div>
+						</f:else>
+					</f:if>
+				</f:if>
+			</f:for>
+	    </div>
+	</div>
+
+</html>

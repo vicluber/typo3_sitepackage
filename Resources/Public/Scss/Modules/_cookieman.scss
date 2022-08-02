@@ -1,0 +1,67 @@
+.cookieman-settings-btn { 
+    text-align: right;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: solid 1px #000;
+    background-color: unset;
+    padding: 20px 30px;
+    margin-right: 4px;
+}
+.cookieman-settings-btn.collapsed:after {
+    border: none!important;
+    background-image: url(/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/pfeil_kreis.svg);
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+    display: inline-block;
+    width: 1rem;
+    height: 1.05rem;
+    content: "";
+    vertical-align: top;
+}
+.cookieman-settings-btn:after {
+    border: none!important;
+    background-image: url(/typo3conf/ext/suedbahnhotel_website/Resources/Public/Icons/pfeil_kreis-red.svg);
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+    display: inline-block;
+    width: 1rem;
+    height: 1.05rem;
+    content: "";
+    vertical-align: top;
+}
+.btn-0 {
+    background-color: $terthiary-color;
+    color: $dark-red;
+    font-weight: 500;
+    font-size: $font-size-regular;
+    border: 2px solid $terthiary-color;
+    padding: 20px;
+    text-transform: uppercase;
+}
+.btn-1 {
+    background-color: $terthiary-color;
+    color: $black;
+    font-weight: 500;
+    font-size: $font-size-regular;
+    border: 2px solid $terthiary-color;
+    padding: 20px;
+    text-transform: uppercase;
+}
+.btn-2 {
+    background-color: $quaternary-color;
+    color: $white;
+    font-weight: 500;
+    font-size: $font-size-regular;
+    border: 2px solid $quaternary-color;
+    padding: 20px;
+    text-transform: uppercase;
+}
+.accordion-button:focus {
+    color: unset;
+    background-color: unset;
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+}

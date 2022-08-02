@@ -1,0 +1,19 @@
+# Here all global PIDs shall be defined
+pages {
+    PIDs {
+        menu {
+	        homePid =
+            navTopPid =
+            footerBottom =
+        }
+        footer {
+            footerPid =
+        }
+        search {
+            searchPid =
+        }
+        header {
+            calendarPid =
+        }
+    }
+}

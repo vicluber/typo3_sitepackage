@@ -1,0 +1,66 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript">
+
+
+##############################
+#### FLUID STYLED CONTENT ####
+##############################
+styles {
+    templates {
+        layoutRootPath = EXT:suedbahnhotel_website/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:suedbahnhotel_website/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:suedbahnhotel_website/Resources/Private/Templates/ContentElements/
+    }
+}
+
+
+############
+### PAGE ###
+############
+page {
+     fluidtemplate {
+        layoutRootPath = EXT:suedbahnhotel_website/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:suedbahnhotel_website/Resources/Private/Partials/Page/
+        templateRootPath = EXT:suedbahnhotel_website/Resources/Private/Templates/Page/
+    }
+    meta {
+        description =
+        author =
+        keywords =
+        viewport = width=device-width, initial-scale=1
+        robots = index,follow
+        apple-mobile-web-app-capable = no
+        compatible = IE=edge
+    }
+    settings {
+        images {
+            favicon = EXT:suedbahnhotel_website/Resources/Public/Icons/favicon.ico
+        }
+    }
+    #tracking {
+    #    google {
+    #        trackingID =
+    #        anonymizeIp = 1
+    #    }
+    #}
+}
+
+
+##############
+### CONFIG ###
+##############
+config {
+    no_cache = 0
+    removeDefaultJS = 0
+    admPanel = 1
+    prefixLocalAnchors = all
+    headerComment = build by hebotek.at
+    sendCacheHeaders = 1
+}
+
+##########################
+#### TYPOSCRIPT SETUP ####
+##########################
+<INCLUDE_TYPOSCRIPT: source="DIR:./Library/constants/" extension="typoscript">

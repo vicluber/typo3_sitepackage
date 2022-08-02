@@ -1,0 +1,306 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript">
+
+
+################
+#### HELPER ####
+################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:suedbahnhotel_website/Configuration/TypoScript/Helper/DynamicContent.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:suedbahnhotel_website/Configuration/TypoScript/ContentElement/Helper/ContentElement.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:suedbahnhotel_website/Configuration/TypoScript/ContentElement/Element/TeaserGroup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:suedbahnhotel_website/Configuration/TypoScript/ContentElement/Element/RelatedLinks.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:suedbahnhotel_website/Configuration/TypoScript/ContentElement/Element/ThumbnailMenu.typoscript">
+
+##########################
+#### TYPOSCRIPT SETUP ####
+##########################
+<INCLUDE_TYPOSCRIPT: source="DIR:./Library/setup/" extension="typoscript">
+
+##############
+#### PAGE ####
+##############
+page = PAGE
+page {
+    typeNum = 0
+    shortcutIcon = {$page.settings.images.favicon}
+
+    10 = FLUIDTEMPLATE
+    10 {
+        # Template names will be generated automatically by converting the applied
+        # backend_layout, there is no explicit mapping necessary anymore.
+        #
+        # BackendLayout Key
+        # subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        #
+        # Backend Record
+        # uid: 1 -> 1.html
+        #
+        # Database Entry
+        # value: -1 -> None.html
+        # value: pagets__subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        templateName = TEXT
+        templateName {
+            cObject = TEXT
+            cObject {
+                data = pagelayout
+                required = 1
+                case = uppercamelcase
+                split {
+                    token = pagets__
+                    cObjNum = 1
+                    1.current = 1
+                }
+            }
+            ifEmpty = Default
+        }
+        templateRootPaths {
+            0 = EXT:suedbahnhotel_website/Resources/Private/Templates/Page/
+            1 = {$page.fluidtemplate.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:suedbahnhotel_website/Resources/Private/Partials/Page/
+            1 = {$page.fluidtemplate.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:suedbahnhotel_website/Resources/Private/Layouts/Page/
+            1 = {$page.fluidtemplate.layoutRootPath}
+        }
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = media
+            }
+            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            20 {
+                levels = 2
+                includeSpacer = 1
+                as = navmain
+            }
+            30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            30 {
+                special = directory
+				special.value = {$pages.PIDs.menu.navTopPid}
+				levels = 1
+                as = navtop
+            }
+            40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            40 {
+                special = directory
+				special.value = {$pages.PIDs.menu.subMenuPid}
+				levels = 1
+                as = subMenuPid
+            }
+            30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            30 {
+                special = directory
+				special.value = {$pages.PIDs.menu.footerBottom}
+				levels = 1
+                as = navfooter
+            }
+           # 70 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+            #70 {
+            #    languages = auto
+            #    as = navlanguage
+            #}
+        }
+
+        settings {
+            menu {
+	            homePid = {$pages.PIDs.menu.homePid}
+                loginPid = {$pages.PIDs.menu.loginPid}
+                headerButtonBusBookingPid = {$pages.PIDs.menu.headerButtonBusBookingPid}
+                headerButtonInquiryPid = {$pages.PIDs.menu.headerButtonInquiryPid}
+            }
+            footer {
+                footerPid = {$pages.PIDs.footer.footerPid}
+            }
+            header {
+                calendarPid = {$pages.PIDs.header.calendarPid}
+            }
+            companyDetails {
+                name = {$companyDetails.name}
+                streetName = {$companyDetails.streetName}
+                streetNumber = {$companyDetails.streetNumber}
+                zip = {$companyDetails.zip}
+                city = {$companyDetails.city}
+                tel = {$companyDetails.tel}
+                email = {$companyDetails.email}
+            }
+            newsletter {
+                pid = {$pages.PIDs.footer.newsletter}
+            }
+            socialMediaLinks {
+                facebook = {$socialMediaLinks.facebook}
+                instagram = {$socialMediaLinks.instagram}
+                spotify = {$socialMediaLinks.spotify}
+                pinterest = {$socialMediaLinks.pinterest}
+                tiktok = {$socialMediaLinks.tiktok}
+                linkedin = {$socialMediaLinks.linkedin}
+            }
+            copyright {
+                name = {$copyright.name}
+                yearFrom = {$copyright.yearFrom}
+            }
+            search {
+                searchPid = {$pages.PIDs.search.searchPid}
+            }
+        }
+    }
+
+    meta {
+        viewport = {$page.meta.viewport}
+        robots = {$page.meta.robots}
+        apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}
+        description = {$page.meta.description}
+        description {
+            override.field = description
+        }
+        author = {$page.meta.author}
+        author {
+            override.field = author
+        }
+        keywords = {$page.meta.keywords}
+        keywords {
+            override.field = keywords
+        }
+        X-UA-Compatible = {$page.meta.compatible}
+        X-UA-Compatible {
+            attribute = http-equiv
+        }
+
+        # OpenGraph Tags
+        og:title {
+            attribute = property
+            field = title
+        }
+        og:site_name {
+            attribute = property
+            data = TSFE:tmpl|setup|sitetitle
+        }
+        og:description = {$page.meta.description}
+        og:description {
+            attribute = property
+            field = description
+        }
+        og:image {
+            attribute = property
+            stdWrap.cObject = FILES
+            stdWrap.cObject {
+                references {
+                    data = levelfield:-1, media, slide
+                }
+                maxItems = 1
+                renderObj = COA
+                renderObj {
+                    10 = IMG_RESOURCE
+                    10 {
+                        file {
+                            import.data = file:current:uid
+                            treatIdAsReference = 1
+                            width = 1280c
+                            height = 720c
+                        }
+                        stdWrap {
+                            typolink {
+                                parameter.data = TSFE:lastImgResourceInfo|3
+                                returnLast = url
+                                forceAbsoluteUrl = 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    includeCSSLibs {
+
+    }
+
+    includeCSS {
+        suedbahnhotel_website_layout = EXT:suedbahnhotel_website/Resources/Public/Css/layout.min.css
+        lightbox2 = EXT:suedbahnhotel_website/Resources/Public/Css/lightbox.min.css
+        jqueryui = EXT:suedbahnhotel_website/Resources/Public/Css/jquery-ui.min.css
+    }
+
+    includeJSLibs {
+        popper = EXT:suedbahnhotel_website/Resources/Public/JavaScript/Lib/popper.min.js
+        bootstrap = EXT:suedbahnhotel_website/Resources/Public/JavaScript/Lib/bootstrap.min.js
+        jquery = EXT:suedbahnhotel_website/Resources/Public/JavaScript/Lib/jquery.min.js
+        jqueryui = EXT:suedbahnhotel_website/Resources/Public/JavaScript/Lib/jquery-ui.min.js
+        slick = EXT:suedbahnhotel_website/Resources/Public/JavaScript/Lib/slick.min.js
+    }
+
+    includeJS {
+
+    }
+
+    includeJSFooterlibs {
+
+    }
+
+    includeJSFooter {
+        suedbahnhotel_website_scripts = EXT:suedbahnhotel_website/Resources/Public/JavaScript/Dist/scripts.js
+    }
+}
+
+################
+#### CONFIG ####
+################
+config {
+    absRefPrefix = auto
+    no_cache = {$config.no_cache}
+    uniqueLinkVars = 1
+    pageTitleFirst = 1
+    linkVars = L
+    prefixLocalAnchors = {$config.prefixLocalAnchors}
+    renderCharset = utf-8
+    metaCharset = utf-8
+    doctype = html5
+    removeDefaultJS = {$config.removeDefaultJS}
+    inlineStyle2TempFile = 1
+    admPanel = {$config.admPanel}
+    debug = 0
+    cache_period = 86400
+    sendCacheHeaders = {$config.sendCacheHeaders}
+    intTarget =
+    extTarget =
+    disablePrefixComment = 1
+    index_enable = 1
+    index_externals = 1
+    index_metatags = 1
+    headerComment = {$config.headerComment}
+    pageTitleSeparator = |
+    pageTitleSeparator.noTrimWrap = | | |
+
+    // Disable Image Upscaling
+    noScaleUp = 1
+
+    // Compression and Concatenation of CSS and JS Files
+    compressJs = 0
+    compressCss = 0
+    concatenateJs = 0
+    concatenateCss = 0
+
+    # Add regular news and travel offers to field type 'link'
+    recordLinks.newsRegular {
+        typolink {
+            parameter = 60
+            additionalParams.data = field:uid
+            additionalParams.wrap = &tx_news_pi1[controller]=News&tx_news_pi1[action]=detail&tx_news_pi1[news]=|
+            useCacheHash = 1
+        }
+    }
+}
+
+[applicationContext == "Production/Staging"]
+    page.meta.robots = noindex,nofollow
+    config.debug = 1
+[END]
+
+[applicationContext matches "/^Development/"]
+    page.meta.robots = noindex,nofollow
+    config.debug = 1
+[END]

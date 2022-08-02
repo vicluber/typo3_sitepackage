@@ -1,0 +1,35 @@
+# EXT - News System
+#####################################
+plugin.tx_news {
+	view {
+		layoutRootPaths.20 = {$fluidpath.layouts}News/
+		partialRootPaths.20 = {$fluidpath.partials}News/
+		templateRootPaths.20 = {$fluidpath.templates}News/
+	}
+	settings {
+		list {
+			paginate {
+				maximumNumberOfLinks = 99	
+			}
+            media {
+                image {
+                    maxWidth = {$styles.content.news.list.maxWidth}
+                    maxHeight = {$styles.content.news.list.maxHeight}
+                }
+            }
+		}
+        detail {
+            media {
+                image {
+                   maxWidth = {$styles.content.news.detail.maxWidth}
+                   maxHeight = {$styles.content.news.detail.maxHeight} 
+                }
+            }
+        }
+        media {
+            maxWidth = {$styles.content.news.detail.maxWidth}
+            maxHeight = {$styles.content.news.detail.maxHeight}
+        }
+	}
+}
+

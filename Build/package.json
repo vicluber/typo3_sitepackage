@@ -1,0 +1,32 @@
+{
+  "name": "hebotek-suedbahnhotel-website",
+  "description": "A sitepackage for the website suedbahnhotel.at",
+  "repository": {
+    "type": "git",
+    "url": "https://code.hebotek.at/hebotek/suedbahnhotel.git"
+  },
+  "homepage": "https://www.hebotek.at",
+  "author": "Hebotek",
+  "version": "1.0.0",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "autoprefixer": "^9.5.0",
+    "grunt": "^1.0.4",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-imagemin": "^3.1.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-postcss": "^0.9.0",
+    "grunt-sass": "^3.0.2",
+    "mixitup": "^3.3.1",
+    "node-sass": "^4.11.0"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/grunt",
+    "css": "./node_modules/.bin/grunt css",
+    "watch": "./node_modules/.bin/grunt watch"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}

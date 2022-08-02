@@ -1,0 +1,41 @@
+<!--Starts the sidebar menu-->
+<div class="offcanvas offcanvas-end sideNavBar" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+    <div class="offcanvas-header justify-content-end pt-5 px-5">
+        <span data-bs-dismiss="offcanvas" aria-label="Close" role="button">
+            <span class="h4 fw-light align-middle">
+              <i class="icon icon-close icon-md bg-black"></i>
+            </span>
+            <span class="px-1 fw-light text-uppercase">
+              <f:translate key="LLL:EXT:suedbahnhotel_website/Resources/Private/Language/de.locallang.xlf:frontend_layout.menu_close" />
+            </span>
+        </span>
+    </div>
+    <div class="offcanvas-body py-5">
+        <ul class="nav nav-pills flex-column mb-sm align-items-start pb-5 sidebar-main-menu" id="menu">
+          <f:for each="{navmain}" as="navItem" iteration="menuIterator">
+              <li class="nav-item dropdown">
+                  <a class="" href="{navItem.link}" target="{navItem.target}" title="{navItem.title}">
+                    {navItem.title}
+                  </a>
+              </li>
+          </f:for>
+        </ul>
+        <ul class="sidebar-submenu" id="menu">
+          <f:for each="{subMenuPid}" as="navItem" iteration="menuIterator">
+            <li class="nav-item">
+                <a class="" href="{navItem.link}" target="{navItem.target}" title="{navItem.title}">
+                    {navItem.title}
+                </a>
+            </li>
+          </f:for>
+        </ul>
+        <div class="d-flex justify-content-center pt-5">
+          <div><a href="{settings.socialMediaLinks.facebook}"><i class="icon m-2 icon-facebook icon-black"></i></a></div>
+          <div><a href="{settings.socialMediaLinks.instagram}"><i class="icon m-2 icon-instagram icon-black"></i></a></div>
+          <div><a href="{settings.socialMediaLinks.tiktok}"><i class="icon m-2 icon-tiktok icon-black"></i></a></div>
+          <div><a href="{settings.socialMediaLinks.linkedin}"><i class="icon m-2 icon-linkedin icon-black"></i></a></div>
+          <div><a href="{settings.socialMediaLinks.spotify}"><i class="icon m-2 icon-spotify icon-black"></i></a></div>
+          <div><a href="{settings.socialMediaLinks.pinterest}"><i class="icon m-2 icon-pinterest icon-black"></i></a></div>
+        </div>
+    </div>
+  </div>

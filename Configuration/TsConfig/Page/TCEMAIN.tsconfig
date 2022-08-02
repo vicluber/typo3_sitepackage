@@ -1,0 +1,23 @@
+#
+# TCEMAIN
+#
+TCEMAIN {
+   # BE Group can do anything, normally "delete" is disabled
+   permissions.group = 31
+}
+
+# newsRegular is an identifier, don't chage it after links have been created
+TCEMAIN.linkHandler.newsRegular {
+   handler = TYPO3\CMS\Recordlist\LinkHandler\RecordLinkHandler
+   # A translatable label can be used with LLL:EXT:theme/locallang.xml:label
+   label = News
+   configuration {
+      table = tx_news_domain_model_news
+      # Default storage pid
+      storagePid = 36
+      # Hide the page tree by setting it to 1
+      hidePageTree = 1
+   }
+   scanAfter = page
+}
+

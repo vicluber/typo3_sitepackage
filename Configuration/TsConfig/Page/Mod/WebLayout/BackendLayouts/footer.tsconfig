@@ -1,0 +1,55 @@
+#
+# BACKENDLAYOUT: DEFAULT
+#
+mod {
+    web_layout {
+        BackendLayouts {
+            footer {
+                title = Footer
+                config {
+                	backend_layout {
+						colCount = 3
+						rowCount = 2
+				        
+						rows {
+							1 {
+								columns {
+									1 {
+										name = Footer - Top
+										colspan = 3
+										colPos = 20
+									}
+								}
+							}
+							2 {
+								columns {
+									1 {
+										name = Footer Middle - 1
+										colPos = 30
+									}
+									2 {
+										name = Footer Middle - 2
+										colPos = 40
+									}
+									3 {
+										name = Footer Middle - 3
+										colPos = 50
+									}
+								}
+							}
+							3 {
+								columns {
+									1 {
+										name = Footer - Bottom
+										colspan = 3
+										colPos = 70
+									}
+								}
+							}
+						}
+					}
+                }
+            }
+        }
+    }
+}

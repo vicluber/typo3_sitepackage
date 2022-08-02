@@ -1,0 +1,558 @@
+{
+    "version": "7.2.0",
+    "tables": {
+        "sys_file_reference": {
+            "sql": {
+                "tx_mask_profile_image": {
+                    "sys_file_reference": {
+                        "tx_mask_profile_image": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_video_thumbnail": {
+                    "sys_file_reference": {
+                        "tx_mask_video_thumbnail": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            }
+        },
+        "tt_content": {
+            "elements": {
+                "header_badge": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_badge_image",
+                        "tx_mask_badge_button_link"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "Image for the header button",
+                        "A link"
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "header_badge",
+                    "label": "Header Badge",
+                    "labels": [
+                        "Button Image",
+                        "Button Link"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 3
+                },
+                "header_image": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "header",
+                        "subheader",
+                        "media",
+                        "tx_mask_button_link"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "Header",
+                        "Subheader",
+                        "Image for the background of the entire header",
+                        "Link for the button above the header title"
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "header_image",
+                    "label": "Header Video\/Image",
+                    "labels": [
+                        "Header",
+                        "Subheader",
+                        "Background image",
+                        "Button link"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                },
+                "team_profile": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_team_profile"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "team_profile",
+                    "label": "Team Profile",
+                    "labels": [
+                        ""
+                    ],
+                    "shortLabel": "",
+                    "sorting": 0
+                },
+                "title_banner": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "tx_mask_title_banner",
+                        "tx_mask_subtitle_banner",
+                        "tx_mask_link_banner",
+                        "tx_mask_link_text",
+                        "tx_mask_bgcolor"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "Main title of the banner",
+                        "Subtitle for the banner",
+                        "",
+                        "Text to display for the link",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "title_banner",
+                    "label": "Text Banner",
+                    "labels": [
+                        "Title",
+                        "Subtitle",
+                        "Link",
+                        "Link text",
+                        "Hintergrundfarbe"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 0
+                },
+                "video_cards": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "tx_mask_video_cards"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "video_cards",
+                    "label": "Video Cards",
+                    "labels": [
+                        ""
+                    ],
+                    "shortLabel": "",
+                    "sorting": 2
+                }
+            },
+            "sql": {
+                "tx_mask_badge_button_link": {
+                    "tt_content": {
+                        "tx_mask_badge_button_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_badge_image": {
+                    "tt_content": {
+                        "tx_mask_badge_image": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_bgcolor": {
+                    "tt_content": {
+                        "tx_mask_bgcolor": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_button_link": {
+                    "tt_content": {
+                        "tx_mask_button_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_link_banner": {
+                    "tt_content": {
+                        "tx_mask_link_banner": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_link_text": {
+                    "tt_content": {
+                        "tx_mask_link_text": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_subtitle_banner": {
+                    "tt_content": {
+                        "tx_mask_subtitle_banner": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_team_profile": {
+                    "tt_content": {
+                        "tx_mask_team_profile": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_title_banner": {
+                    "tt_content": {
+                        "tx_mask_title_banner": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_video_cards": {
+                    "tt_content": {
+                        "tx_mask_video_cards": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "media": {
+                    "coreField": 1,
+                    "fullKey": "media",
+                    "imageoverlayPalette": 1,
+                    "key": "media",
+                    "type": "file"
+                },
+                "subheader": {
+                    "coreField": 1,
+                    "fullKey": "subheader",
+                    "key": "subheader",
+                    "type": "string"
+                },
+                "tx_mask_badge_button_link": {
+                    "config": {
+                        "placeholder": "Link",
+                        "renderType": "inputLink",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_badge_button_link",
+                    "key": "badge_button_link",
+                    "type": "link"
+                },
+                "tx_mask_badge_image": {
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "fileUploadAllowed": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_table": "sys_file_reference",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_badge_image",
+                    "imageoverlayPalette": 1,
+                    "key": "badge_image",
+                    "type": "file"
+                },
+                "tx_mask_bgcolor": {
+                    "config": {
+                        "default": "0",
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            [
+                                "Default",
+                                "0",
+                                "",
+                                ""
+                            ],
+                            [
+                                "Orange",
+                                "1",
+                                "",
+                                ""
+                            ],
+                            [
+                                "Gr\u00fcn",
+                                "2",
+                                "",
+                                ""
+                            ]
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "fullKey": "tx_mask_bgcolor",
+                    "key": "bgcolor",
+                    "type": "select"
+                },
+                "tx_mask_button_link": {
+                    "config": {
+                        "fieldControl": {
+                            "linkPopup": {
+                                "options": {
+                                    "blindLinkOptions": "url,mail,file,folder,telephone"
+                                }
+                            }
+                        },
+                        "placeholder": "Button link",
+                        "renderType": "inputLink",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_button_link",
+                    "key": "button_link",
+                    "type": "link"
+                },
+                "tx_mask_link_banner": {
+                    "config": {
+                        "fieldControl": {
+                            "linkPopup": {
+                                "options": {
+                                    "blindLinkOptions": "file,folder,mail,telephone"
+                                }
+                            }
+                        },
+                        "renderType": "inputLink",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_link_banner",
+                    "key": "link_banner",
+                    "type": "link"
+                },
+                "tx_mask_link_text": {
+                    "config": {
+                        "placeholder": "Link text",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_link_text",
+                    "key": "link_text",
+                    "type": "string"
+                },
+                "tx_mask_subtitle_banner": {
+                    "config": {
+                        "placeholder": "Subtitle",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_subtitle_banner",
+                    "key": "subtitle_banner",
+                    "type": "string"
+                },
+                "tx_mask_team_profile": {
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "maxitems": "3",
+                        "minitems": "1",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_team_profile",
+                    "key": "team_profile",
+                    "type": "inline"
+                },
+                "tx_mask_title_banner": {
+                    "config": {
+                        "eval": "required",
+                        "placeholder": "Title",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_title_banner",
+                    "key": "title_banner",
+                    "type": "string"
+                },
+                "tx_mask_video_cards": {
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "dragdrop": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showPossibleLocalizationRecords": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "minitems": "1",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_video_cards",
+                    "key": "video_cards",
+                    "type": "inline"
+                }
+            }
+        },
+        "tx_mask_team_profile": {
+            "sql": {
+                "tx_mask_profile_email": {
+                    "tx_mask_team_profile": {
+                        "tx_mask_profile_email": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_profile_image": {
+                    "tx_mask_team_profile": {
+                        "tx_mask_profile_image": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_profile_name": {
+                    "tx_mask_team_profile": {
+                        "tx_mask_profile_name": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_profile_phone": {
+                    "tx_mask_team_profile": {
+                        "tx_mask_profile_phone": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_profile_position": {
+                    "tx_mask_team_profile": {
+                        "tx_mask_profile_position": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_profile_email": {
+                    "config": {
+                        "placeholder": "Email",
+                        "type": "input"
+                    },
+                    "description": "Profile's email",
+                    "fullKey": "tx_mask_profile_email",
+                    "inlineParent": "tx_mask_team_profile",
+                    "key": "profile_email",
+                    "label": "Email",
+                    "order": 5,
+                    "type": "string"
+                },
+                "tx_mask_profile_image": {
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "fileUploadAllowed": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_table": "sys_file_reference",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_profile_image",
+                    "imageoverlayPalette": 1,
+                    "inlineParent": "tx_mask_team_profile",
+                    "key": "profile_image",
+                    "order": 1,
+                    "type": "file"
+                },
+                "tx_mask_profile_name": {
+                    "config": {
+                        "placeholder": "Name",
+                        "type": "input"
+                    },
+                    "description": "Profile's Name",
+                    "fullKey": "tx_mask_profile_name",
+                    "inlineParent": "tx_mask_team_profile",
+                    "key": "profile_name",
+                    "label": "Name",
+                    "order": 2,
+                    "type": "string"
+                },
+                "tx_mask_profile_phone": {
+                    "config": {
+                        "placeholder": "Phone",
+                        "type": "input"
+                    },
+                    "description": "Profile's phone",
+                    "fullKey": "tx_mask_profile_phone",
+                    "inlineParent": "tx_mask_team_profile",
+                    "key": "profile_phone",
+                    "label": "Phone",
+                    "order": 4,
+                    "type": "string"
+                },
+                "tx_mask_profile_position": {
+                    "config": {
+                        "placeholder": "Position",
+                        "type": "input"
+                    },
+                    "description": "Profile's position",
+                    "fullKey": "tx_mask_profile_position",
+                    "inlineParent": "tx_mask_team_profile",
+                    "key": "profile_position",
+                    "label": "Position",
+                    "order": 3,
+                    "type": "string"
+                }
+            }
+        },
+        "tx_mask_video_cards": {
+            "sql": {
+                "tx_mask_video_thumbnail": {
+                    "tx_mask_video_cards": {
+                        "tx_mask_video_thumbnail": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_video_title": {
+                    "tx_mask_video_cards": {
+                        "tx_mask_video_title": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_video_thumbnail": {
+                    "allowedFileExtensions": "jpeg,jpg,png",
+                    "config": {
+                        "appearance": {
+                            "fileUploadAllowed": 1
+                        },
+                        "foreign_table": "sys_file_reference",
+                        "maxitems": "1",
+                        "minitems": "1",
+                        "type": "inline"
+                    },
+                    "description": "Vorschaubild des Videos",
+                    "fullKey": "tx_mask_video_thumbnail",
+                    "imageoverlayPalette": 1,
+                    "inlineParent": "tx_mask_video_cards",
+                    "key": "video_thumbnail",
+                    "label": "Videovorschaubild",
+                    "order": 2,
+                    "type": "file"
+                },
+                "tx_mask_video_title": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "description": "Titel des Videos",
+                    "fullKey": "tx_mask_video_title",
+                    "inlineParent": "tx_mask_video_cards",
+                    "key": "video_title",
+                    "label": "Titel",
+                    "order": 1,
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

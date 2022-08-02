@@ -1,0 +1,78 @@
+<f:if condition="{data.media}">
+    <f:variable name="imageRendered" value="0" />
+        <div class="header-image-container bg-primary">
+            <div class="container">
+                <div class="d-none d-xs-none d-sm-block position-relative">
+                    <f:if condition="{data.header}">
+                        <div class="header-image-title">
+                            <h1 class="text-uppercase">{data.header}</h1>
+                        </div>
+                    </f:if>
+                    <f:if condition="{data.tx_mask_button_link}">
+                        <div class="header-button">
+                            <f:link.typolink class="text-uppercase" parameter="{data.tx_mask_button_link}">
+                                <f:translate key="LLL:EXT:suedbahnhotel_website/Resources/Private/Language/de.locallang.xlf:frontend_layout.buy_ticket_button" />
+                            </f:link.typolink>
+                        </div>
+                    </f:if>
+                    <f:if condition="{data.subheader}">
+                        <div class="header-image-subtitle h1">{data.subheader}</div>
+                    </f:if>
+                </div>
+            </div>
+                <f:if condition="{data.media.0.originalFile.type} == 4 && {imageRendered} == 0">
+                    <f:variable name="imageRendered" value="1" />
+                    <div id="video-diag-cut-header">
+                        <f:if condition="{data.media.0.properties.copyright}">
+                            <div class="file-copyright">
+                                &copy; Foto: {data.media.0.properties.copyright}
+                            </div>
+                        </f:if>
+                        <f:if condition="{data.media.1}">
+                            <f:then>
+                                <f:media class="video-embed-item" id="header-video" file="{data.media.0.originalFile}" width="{dimensions.width}" height="{dimensions.height}" alt="{data.media.0.alternative}" title="{data.media.0.properties.title}"
+                        additionalConfig="{autoplay: '0', controls: '0', muted: '1', loop: '1'}" additionalAttributes="{poster: '/fileadmin{data.media.1.originalFile.identifier}'}"/>
+                            </f:then>
+                            <f:else>
+                                <f:media class="video-embed-item" id="header-video" file="{data.media.0.originalFile}" width="{dimensions.width}" height="{dimensions.height}" alt="{data.media.0.alternative}" title="{data.media.0.properties.title}"
+                        additionalConfig="{autoplay: '0', controls: '0', muted: '1', loop: '1'}" />
+                            </f:else>
+                        </f:if>
+                    </div>
+                </f:if>
+                <f:if condition="{data.media.0.originalFile.type} == 2 && {imageRendered} == 0">
+                    <f:variable name="imageRendered" value="1" />
+                    <div id="img-diag-cut-header">
+                        <f:if condition="{data.media.0.properties.copyright}">
+                            <div class="file-copyright">
+                                &copy; Foto: {data.media.0.properties.copyright}
+                            </div>
+                        </f:if>
+                        <f:if condition="{data.media.0.properties.copyright}">
+                            <div class="file-copyright">
+                                &copy; Foto: {data.media.0.properties.copyright}
+                            </div>
+                        </f:if>
+                        <f:image class="header-image" title="{data.media.0.properties.title}" alt="{data.media.0.properties.title} - {data.media.0.properties.copyright}" image="{data.media.0}" />
+                    </div>
+                </f:if>
+        </div>
+        <div class="d-block d-xs-block d-sm-none bg-primary p-4">
+            <f:if condition="{data.tx_mask_button_link}">
+                <div class="text-center py-3">
+                    <f:link.typolink class="text-uppercase header-button-mobile p-3" parameter="{data.tx_mask_button_link}">
+                        <f:translate key="LLL:EXT:suedbahnhotel_website/Resources/Private/Language/de.locallang.xlf:frontend_layout.buy_ticket_button" />
+                    </f:link.typolink>
+                </div>
+            </f:if>
+            <f:if condition="{data.header}">
+                <div class="text-center text-black pt-5">
+                    <h1 class="text-uppercase">{data.header}</h1>
+                </div>
+            </f:if>
+            
+            <f:if condition="{data.subheader}">
+                <div class="text-center text-black py-3 h1 m-0">{data.subheader}</div>
+            </f:if>
+        </div>
+</f:if>

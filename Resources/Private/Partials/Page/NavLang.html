@@ -1,0 +1,30 @@
+<nav id="nav-lang">
+
+    <div class="dropdown dropdown-lang">
+        
+        <!-- active -->
+        <f:for each="{navlanguage}" as="item">
+            <f:if condition="{item.active}">
+                <a class="dropdown-toggle" href="#" role="button" id="lang-nav-dropdownMenuLink" 
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    {item.navigationTitle}
+                </a>
+            </f:if>
+        </f:for>
+        
+        <!-- all languages -->
+        <ul class="dropdown-menu" aria-labelledby="lang-nav-dropdownMenuLink">
+            <f:for each="{navlanguage}" as="item">
+                <f:if condition="{item.link}">
+                    <li>
+                        <f:link.typolink    parameter="{item.link}" 
+                                            title="Site in {item.navigationTitle}" 
+                                            class="dropdown-item {f:if(condition: item.active, then: 'active')}">
+                            {item.navigationTitle}
+                        </f:link.typolink>
+                    </li>
+                </f:if>
+            </f:for>
+        </ul>
+    </div>
+</nav>

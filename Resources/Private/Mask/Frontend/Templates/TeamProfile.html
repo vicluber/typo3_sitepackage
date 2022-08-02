@@ -1,0 +1,41 @@
+<f:if condition="{data.tx_mask_team_profile}">
+    <div class="team-profile-container">
+        <div class="row">
+            <f:for each="{data.tx_mask_team_profile}" as="data_item">
+                <div class="col-12 col-md-12 col-lg-12 col-xl-4">
+                    <div class="profile-image-container">
+                        <div class="fill">
+                            <f:for each="{data_item.tx_mask_profile_image}" as="file">
+                                <f:image image="{file}" />
+                                {file.description}
+                            </f:for>
+                        </div>
+                    </div>
+                    <div class="py-3 team-profile-data">
+                        <div class="fw-500">
+                            <f:if condition="{data_item.tx_mask_profile_name}">
+                                {data_item.tx_mask_profile_name}
+                            </f:if>
+                        </div>
+                        <div>
+                            <f:if condition="{data_item.tx_mask_profile_position}">
+                                {data_item.tx_mask_profile_position}
+                            </f:if>
+                        </div>
+                        <br />
+                        <div>
+                            <f:if condition="{data_item.tx_mask_profile_phone}">
+                                {data_item.tx_mask_profile_phone}
+                            </f:if>
+                        </div>
+                        <div>
+                            <f:if condition="{data_item.tx_mask_profile_email}">
+                                {data_item.tx_mask_profile_email}
+                            </f:if>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </div>
+</f:if>

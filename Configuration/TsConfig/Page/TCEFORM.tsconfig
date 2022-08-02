@@ -1,0 +1,33 @@
+#
+# TCEFORM
+#
+TCEFORM {
+    pages {
+        layout {
+            altLabels {
+                0 = black Header
+                1 = white Header
+            }
+            removeItems = 2,3
+        }
+    }
+    tt_content {
+        space_before_class {
+            altLabels {
+                1 = Small (45px)
+                2 = Medium (70px)
+                3 = Large (100px)
+            }
+        }
+        space_after_class {
+            altLabels {
+                1 = Small (45px)
+                2 = Medium (70px)
+                3 = Large (100px)
+            }
+        }
+        imageorient {
+            removeItems = 1,2,9,10,25,26
+        }
+    }
+}

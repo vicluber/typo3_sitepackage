@@ -1,0 +1,81 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{gallery.rows}">
+    <!-- Render gallery or single photo -->
+    <f:if condition="{gallery.rows->f:count()} >= 2 && {data.imageorient} == 220">
+        <!-- Render gallery -->
+        <f:then>
+            <div class="ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}" data-ce-columns="{gallery.count.columns}" data-ce-images="{gallery.count.files}">
+                <f:if condition="{gallery.position.horizontal} == 'center'">
+                    <div class="ce-outer">
+                        <div class="ce-inner">
+                </f:if>
+                <div class="news-slider-wrapper">
+                    <div class="news-slider wide-screen text-media-slickslider">
+                        <div class="items">
+                            <f:for each="{gallery.rows}" as="image" iteration="iter">
+                                
+                                <div class="item" data-slider-item-index="{iter.index}">
+                                    <f:image image="{image.columns.1.media.originalFile}" title="{image.columns.1.media.properties.title}" alt="{image.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.detail.media.image.maxWidth)}"
+                                    maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.detail.media.image.maxHeight)}"/>
+                                    <div class="copyright" data-slider-item-index="{iter.index}">
+                                        <f:if condition="{image.columns.1.media.properties.copyright}">
+                                            <span class="image-copyright">&copy; Foto: {image.columns.1.media.properties.copyright}</span>
+                                        </f:if>
+                                    </div>
+                                </div>
+                            </f:for>
+                        </div>
+                    </div>
+                    <div clasS="news-slider-captions">
+                        <f:for each="{gallery.rows}" as="image" iteration="iter">
+                            <f:if condition="{image.columns.1.media.properties.description}">
+                                <f:then>
+                                    <div class="caption" data-slider-item-index="{iter.index}">
+                                        <div class="image-title-wrapper">
+                                            <span class="image-title">{image.columns.1.media.properties.description}</span>
+                                        </div>
+                                    </div>
+                                </f:then>
+                                <f:else>
+                                    <div class="caption" data-slider-item-index="{iter.index}">
+                                        <div class="image-title-wrapper">
+                                            <span class="image-title">&nbsp;</span>
+                                        </div>
+                                    </div>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </div>
+                </div>
+                <f:if condition="{gallery.position.horizontal} == 'center'">
+                        </div>
+                    </div>
+                </f:if>
+            </div>
+        </f:then>
+        <!-- Render single foto -->
+        <f:else>
+            <div class="ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}" data-ce-columns="{gallery.count.columns}" data-ce-images="{gallery.count.files}">
+                <f:if condition="{gallery.position.horizontal} == 'center'">
+                    <div class="ce-outer">
+                        <div class="ce-inner">
+                </f:if>
+                <f:for each="{gallery.rows}" as="row">
+                    <div class="ce-row">
+                        <f:for each="{row.columns}" as="column">
+                            <f:if condition="{column.media}">
+                                <div class="ce-column">
+                                    <f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
+                                </div>
+                            </f:if>
+                        </f:for>
+                    </div>
+                </f:for>
+                <f:if condition="{gallery.position.horizontal} == 'center'">
+                        </div>
+                    </div>
+                </f:if>
+            </div>
+        </f:else>
+    </f:if>
+</f:if>

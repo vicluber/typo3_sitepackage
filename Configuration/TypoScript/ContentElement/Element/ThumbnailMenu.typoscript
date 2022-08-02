@@ -1,0 +1,21 @@
+##########################
+#### CTYPE: CARDGROUP ####
+##########################
+
+tt_content.thumbnail_menu >
+tt_content.thumbnail_menu =< lib.contentElement
+tt_content.thumbnail_menu {
+
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = ThumbnailMenu
+
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+
+    }
+
+}

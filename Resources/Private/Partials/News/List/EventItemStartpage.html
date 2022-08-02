@@ -1,0 +1,52 @@
+<div class="news-event-container col-12 col-md-12 col-lg-6">
+    <div class="d-flex flex-column bd-highlight p-5 bg-white pb-4 news-event-above">
+        <div class="p-2 pt-3 bd-highlight mb-auto">
+            <h3 class="text-uppercase">
+                {newsItem.title}
+            </h3>
+        </div>
+        <div class="p-2 bd-highlight h2 fw-500">
+            <f:format.date format="%d. %B %Y">{newsItem.datetime}</f:format.date>
+        </div>
+        <div class="h2 fw-300">{newsItem.location.title}</div>
+        <div class="p-2 bd-highlight mt-auto">
+            <n:link newsItem="{newsItem}" settings="{settings}" class="more text-uppercase text-black h5 fw-700" title="{newsItem.title}">
+                <f:translate key="LLL:EXT:suedbahnhotel_website/Resources/Private/Language/de.locallang.xlf:frontend_layout.buy_ticket_button" />
+            </n:link>
+        </div>
+    </div>
+    <div>
+        <f:if condition="{newsItem.mediaPreviews}">
+            <!-- media preview element -->
+            <f:then>
+                <div class="news-image-container" id="img-diag-cut">
+                    <f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+                        <f:if condition="{mediaElement.originalResource.type} == 2">
+                            <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+                            <f:if condition="{mediaElement.originalResource.originalFile.properties.copyright}">
+                                <div class="image-copyright">&copy; Foto: {mediaElement.originalResource.originalFile.properties.copyright}</div>
+                            </f:if>
+                        </f:if>
+                        <f:if condition="{mediaElement.originalResource.type} == 4">
+                            <f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}"/>
+                        </f:if>
+                        <f:if condition="{mediaElement.originalResource.type} == 5">
+                            <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+                        </f:if>
+                    </f:alias>
+                </div>
+            </f:then>
+            <f:else>
+                <f:if condition="{settings.displayDummyIfNoMedia}">
+                    <div class="news-img-wrap">
+                        <span class="no-media-element">
+                            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                                <f:image src="{settings.list.media.dummyImage}" title="" alt="" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+                            </n:link>
+                        </span>
+                    </div>
+                </f:if>
+            </f:else>
+        </f:if>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+plugin.tx_indexedsearch {
+    targetPid = {$pages.PIDs.search.searchPid}
+
+    view {
+		layoutRootPaths.100 = {$fluidpath.layouts}Search/
+		partialRootPaths.100 = {$fluidpath.partials}Search/
+		templateRootPaths.100 = {$fluidpath.templates}
+	}
+    settings {
+        displayAdvancedSearchLink = 0
+    }
+}
+
+# remove the word 'page' from pagination link
+plugin.tx_indexedsearch._LOCAL_LANG.en.displayResults.page =
+plugin.tx_indexedsearch._LOCAL_LANG.de.displayResults.page =
+
+# remove the word 'next' from pagination link
+plugin.tx_indexedsearch._LOCAL_LANG.en.displayResults.next = >
+plugin.tx_indexedsearch._LOCAL_LANG.de.displayResults.next = >
+
+# remove the word 'previous' from pagination link
+plugin.tx_indexedsearch._LOCAL_LANG.en.displayResults.previous = <
+plugin.tx_indexedsearch._LOCAL_LANG.de.displayResults.previous = <

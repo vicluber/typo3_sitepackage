@@ -1,0 +1,20 @@
+{
+    "name": "hebotek/suedbahnhotel-website",
+    "type": "typo3-cms-extension",
+    "description": "A sitepackage for the website suedbahnhotel.at",
+    "homepage": "https://www.hebotek.at",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "require": {
+        "typo3/cms-core": "^10.2",
+        "typo3/cms-rte-ckeditor": "^10.2",
+        "typo3/cms-fluid-styled-content": "^10.2",
+        "georgringer/eventnews": "^9.1",
+        "georgringer/news": "^6.1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "HeBoTek\\SuedbahnhotelWebsite\\": "Classes/"
+        }
+    }
+}

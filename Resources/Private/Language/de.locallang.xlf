@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2021-06-18UTC12:28:060">
+        <header>
+            <authorName>Hebotek</authorName>
+            <authorEmail>support@hebotek.at</authorEmail>
+        </header>
+        <body>
+            <!-- General -->
+            <trans-unit id="frontend_layout.buy_ticket_button">
+                <source>INFOS &amp; TICKETS</source>
+            </trans-unit>
+            <trans-unit id="frontend_layout.link_to_events_list">
+                <source>ALLE VERANSTALTUNGEN ANSEHEN</source>
+            </trans-unit>
+            <trans-unit id="frontend_layout.categories">
+                <source>Kategorie</source>
+            </trans-unit>
+            <trans-unit id="frontend_layout.when">
+                <source>Monat</source>
+            </trans-unit>
+            <trans-unit id="frontend_layout.all_categories">
+                <source>Alle</source>
+            </trans-unit>
+            <trans-unit id="frontend_layout.menu_close">
+                <source>Schliessen</source>
+            </trans-unit>
+            <trans-unit id="frontend_layout.menu_open">
+                <source>MENÜ</source>
+            </trans-unit>
+            <trans-unit id="frontend_layout.related-news-header" xml:space="preserve">
+                <source>verwandte veranstaltungen</source>
+            </trans-unit>
+            <trans-unit id="list_nonewsfound" xml:space="preserve">
+                <source>Keine Veranstaltungen verfügbar</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

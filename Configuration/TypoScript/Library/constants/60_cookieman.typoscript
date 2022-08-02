@@ -1,0 +1,10 @@
+plugin.tx_cookieman {
+    settings {
+        resourcesBasePath = EXT:suedbahnhotel_website/Extensions/Cookieman/Resources
+        theme = suedbahnhotelTheme
+        links {
+            dataProtectionDeclarationPid =
+            imprintPid =
+        }
+    }
+}

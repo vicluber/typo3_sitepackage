@@ -1,0 +1,32 @@
+<div id="nav-main">
+
+    <ul class="navbar-nav mb-2 mb-lg-0 nav-level-1">
+        <f:for each="{navmain}" as="item">
+            <li class="nav-item {f:if(condition: item.active, then:'active')}">
+                <a href="{item.link}" class="nav-link {f:if(condition: item.children, then:'nav-dropdown')}">
+                    {item.title}
+
+                    <f:if condition="{item.children}">
+                        <span class="dropdown-trigger">
+                            <span class="dropdown-toggle"></span>
+                        </span>
+                    </f:if>
+                </a>
+                
+
+                <f:if condition="{item.children}">
+                    <ul class="nav-level-2 nav-dropdown-menu">
+                        <f:for each="{item.children}" as="item">
+                            <li class="nav-item {f:if(condition: item.active, then:'active')}">
+                                <a href="{item.link}" class="nav-link">
+                                    {item.title}
+                                </a>
+                            </li>
+                        </f:for>
+                    </ul>
+                </f:if>
+            </li>
+        </f:for>
+    </ul>
+</div>
+  

@@ -1,0 +1,24 @@
+lib.breadcrumbs = COA
+lib.breadcrumbs {
+    wrap = <ul>|</ul>
+    5 = TEXT
+    5 {
+        value = Home
+        typolink.parameter = 1
+        wrap = <li>|</li>
+    }
+    10 = HMENU
+    10 {
+        special = rootline
+
+        special.range = 1|-1
+        wrap = |
+
+        1 = TMENU
+        1.target = _top
+        1.NO {
+            stdWrap.htmlSpecialChars = 1
+            wrapItemAndSub = <li>|</li>
+        }
+    }
+}

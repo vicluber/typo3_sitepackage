@@ -1,0 +1,9 @@
+#
+# PageTS for Suedbahnhotel Website
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:suedbahnhotel_website/Configuration/TsConfig/Page/ContentElement/All.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:suedbahnhotel_website/Configuration/TsConfig/Page/RTE.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:suedbahnhotel_website/Configuration/TsConfig/Page/TCEFORM.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:suedbahnhotel_website/Configuration/TsConfig/Page/TCEMAIN.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:suedbahnhotel_website/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:suedbahnhotel_website/Configuration/TsConfig/Page/News.tsconfig">

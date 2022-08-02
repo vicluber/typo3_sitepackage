@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "BrandonGrotesque";
+    src: url('/typo3conf/ext/suedbahnhotel_website/Resources/Public/Fonts/BrandonGrotesqueLight/font.woff2') format('woff2'), url('/typo3conf/ext/suedbahnhotel_website/Resources/Public/Fonts/BrandonGrotesqueLight/font.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: "BrandonGrotesque";
+    src: url('/typo3conf/ext/suedbahnhotel_website/Resources/Public/Fonts/BrandonGrotesqueRegular/font.woff2') format('woff2'), url('/typo3conf/ext/suedbahnhotel_website/Resources/Public/Fonts/BrandonGrotesqueRegular/font.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: "BrandonGrotesque";
+    src: url('/typo3conf/ext/suedbahnhotel_website/Resources/Public/Fonts/BrandonGrotesqueMedium/font.woff2') format('woff2'), url('/typo3conf/ext/suedbahnhotel_website/Resources/Public/Fonts/BrandonGrotesqueMedium/font.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: "BrandonGrotesque";
+    src: url('/typo3conf/ext/suedbahnhotel_website/Resources/Public/Fonts/BrandonGrotesqueBold/font.woff2') format('woff2'), url('/typo3conf/ext/suedbahnhotel_website/Resources/Public/Fonts/BrandonGrotesqueBold/font.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}

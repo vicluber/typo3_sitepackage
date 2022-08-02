@@ -1,0 +1,150 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  xmlns:hb="http://typo3.org/ns/HeBoTek/suedbahnhotelWebsite/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/Category/List.html
+-->
+
+<f:section name="content">
+	<f:if condition="{categories}">
+		<f:then>
+			<f:render section="categoryTree" arguments="{categories:categories,overwriteDemand:overwriteDemand}" />
+		</f:then>
+		<f:else>
+			<f:translate key="list_nocategoriesfound" />
+		</f:else>
+	</f:if>
+	<f:if condition="{overwriteDemand.categories} || {overwriteDemand.month}">
+        <div class="d-flex py-2">
+            <f:if condition="{overwriteDemand.month}">
+                <f:if condition="{overwriteDemand.categories}">
+                	<f:then>
+                		<f:link.page class="filter p-1 me-3 hay" pageUid="{settings.listPid}" section="section-{pageData.uid}"
+	                    additionalParams="{tx_news_pi1:{overwriteDemand:{categories:'{overwriteDemand.categories}'}}}">
+		                    x {f:format.date(date:"12/15/2020+{overwriteDemand.month}month",format:"%B")} {overwriteDemand.year}
+		                </f:link.page>
+                	</f:then>
+                	<f:else>
+                		<f:link.page pageUid="{settings.listPid}" section="section-{pageData.uid}" absolute="true" class="filter p-1 me-3 nohay">
+			                x {f:format.date(date:"12/15/2020+{overwriteDemand.month}month",format:"%B")} {overwriteDemand.year}
+			            </f:link.page>
+                	</f:else>
+                </f:if>
+			</f:if>
+            <f:if condition="{overwriteDemand.categories}">
+                <f:for each="{categories}" as="cat" iteration="i">
+					<hb:contains haystack="{overwriteDemand.categories}" needle="{cat.item.uid}" list="true">
+						<f:link.page class="filter p-1 me-3" pageUid="{settings.listPid}"
+							absolute="true"
+							section="section-{pageData.uid}" additionalParams="{hb:multiCategoryLink.arguments(mode:'remove',item:cat.item,list:'{overwriteDemand}',forceCatId:'{contentObjectData.uid}')}">
+							x {cat.item.title}
+						</f:link.page>
+					</hb:contains>
+                </f:for>
+            </f:if>
+            <f:link.page pageUid="{settings.listPid}" section="section-{pageData.uid}" absolute="true" class="filter p-1 me-3">
+                x Filter löschen
+            </f:link.page>
+        </div>
+    </f:if>
+</f:section>
+
+<f:section name="categoryTree">
+	<div class="categories-dropdown bg-primary container-break-out">
+		<div class="container p-0 d-flex">
+			<div class="dropdown-dates">
+				<div class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+					<f:translate key="LLL:EXT:suedbahnhotel_website/Resources/Private/Language/de.locallang.xlf:frontend_layout.when" />
+				</div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                        <f:render section="dateFilters" arguments="{
+                        	month:'{f:format.date(date:\'first day of this month+1month\',format:\'m\')}',
+                        	year:'{f:format.date(date:\'first day of this month+1month\',format:\'Y\')}', overwriteDemand:overwriteDemand}" />
+                        <f:render section="dateFilters" arguments="{
+	                        month:'{f:format.date(date:\'first day of this month+2month\',format:\'m\')}',
+	                        year:'{f:format.date(date:\'first day of this month+2month\',format:\'Y\')}',
+	                        overwriteDemand:overwriteDemand}" />
+                        <f:render section="dateFilters" arguments="{
+                        	month:'{f:format.date(date:\'first day of this month+3month\',format:\'m\')}',
+                        	year:'{f:format.date(date:\'first day of this month+3month\',format:\'Y\')}', overwriteDemand:overwriteDemand}" />
+                        <f:render section="dateFilters" arguments="{
+	                        month:'{f:format.date(date:\'first day of this month+4month\',format:\'m\')}',
+	                        year:'{f:format.date(date:\'first day of this month+4month\',format:\'Y\')}',
+	                        overwriteDemand:overwriteDemand}" />
+                        <f:render section="dateFilters" arguments="{
+	                        month:'{f:format.date(date:\'first day of this month+5month\',format:\'m\')}',
+	                        year:'{f:format.date(date:\'first day of this month+5month\',format:\'Y\')}',
+	                        overwriteDemand:overwriteDemand}" />
+                        <f:render section="dateFilters" arguments="{
+	                        month:'{f:format.date(date:\'first day of this month+6month\',format:\'m\')}',
+	                        year:'{f:format.date(date:\'first day of this month+6month\',format:\'Y\')}',
+	                        overwriteDemand:overwriteDemand}" />
+                        <f:render section="dateFilters" arguments="{
+	                        month:'{f:format.date(date:\'first day of this month+7month\',format:\'m\')}',
+	                        year:'{f:format.date(date:\'first day of this month+7month\',format:\'Y\')}',
+	                        overwriteDemand:overwriteDemand}" />
+                        <f:render section="dateFilters" arguments="{
+	                        month:'{f:format.date(date:\'first day of this month+8month\',format:\'m\')}',
+	                        year:'{f:format.date(date:\'first day of this month+8month\',format:\'Y\')}',
+	                        overwriteDemand:overwriteDemand}" />
+                        <f:render section="dateFilters" arguments="{
+	                        month:'{f:format.date(date:\'first day of this month+9month\',format:\'m\')}',
+	                        year:'{f:format.date(date:\'now-2days+9month\',format:\'Y\')}',
+	                        overwriteDemand:overwriteDemand}" />
+                        <f:render section="dateFilters" arguments="{
+	                        month:'{f:format.date(date:\'first day of this month+10month\',format:\'m\')}',
+	                        year:'{f:format.date(date:\'first day of this month+10month\',format:\'Y\')}',
+	                        overwriteDemand:overwriteDemand}" />
+                        <f:render section="dateFilters" arguments="{
+                            month:'{f:format.date(date:\'first day of this month+11month\',format:\'m\')}',
+                            year:'{f:format.date(date:\'first day of this month+11month\',format:\'Y\')}',
+                            overwriteDemand:overwriteDemand}" />
+                </div>
+            </div>
+			<div class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+				<f:translate key="LLL:EXT:suedbahnhotel_website/Resources/Private/Language/de.locallang.xlf:frontend_layout.categories" />
+			</div>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+				<div>
+					<f:link.page title="{category.item.title}" class="text-uppercase dropdown-item" pageUid="{settings.listPid}"
+						additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">
+						<f:translate key="LLL:EXT:suedbahnhotel_website/Resources/Private/Language/de.locallang.xlf:frontend_layout.all_categories" />
+					</f:link.page>
+				</div>
+				<f:for each="{categories}" as="category">
+					{n:category.count(categoryUid:category.item.uid) -> f:variable(name: 'categoryUsageCount')}
+					<div>
+						<n:multiCategoryLink.isCategoryActive list="{overwriteDemand.categories}" item="{category.item.uid}">
+							<f:then>
+								<f:link.page title="{category.item.title}" class="active text-uppercase dropdown-item" pageUid="{settings.listPid}"
+									section="{section}" additionalParams="{hb:multiCategoryLink.arguments(mode:'remove',item:category.item,list:'{overwriteDemand}',forceCatId:'{coId}')}">
+									{category.item.title}
+
+								</f:link.page>
+
+							</f:then>
+							<f:else>
+								<f:link.page title="{category.item.title}" class="text-uppercase dropdown-item" section="{section}"
+									pageUid="{settings.listPid}" additionalParams="{hb:multiCategoryLink.arguments(mode:'add',item:category.item,list:'{overwriteDemand}',forceCatId:'{coId}', siblings:'{categories}')}">
+									{category.item.title}
+								</f:link.page>
+                        	</f:else>
+                    	</n:multiCategoryLink.isCategoryActive>
+					</div>
+				</f:for>
+			</div>
+		</div>
+	</div>
+</f:section>
+<f:section name="dateFilters">
+    <f:link.action action="month" section="section-{pageData.uid}"
+    additionalParams="{tx_news_pi1:{overwriteDemand:{year:'{year}',month:'{month}',categories:'{overwriteDemand.categories}'}}}"
+    class="text-uppercase dropdown-item {n:multiCategoryLink.isCategoryActive(list:'{overwriteDemand.month} {overwriteDemand.year}',item:'{month} {year}',then:' active')}">
+    {f:format.date(date:"12/12/2020+{month}month",format:"%B")} {year}
+    </f:link.action>
+</f:section>
+</html>

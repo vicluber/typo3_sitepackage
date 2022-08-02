@@ -1,0 +1,21 @@
+##############################
+#### FLUID STYLED CONTENT ####
+##############################
+styles {
+    content{
+    	textmedia {
+	    	maxW = 2000
+    		maxWInText = 2000
+    	}
+        news {
+            list {
+                maxWidth = 900
+    		    maxHeight = 600
+            }
+            detail {
+                maxWidth = 2000
+    		    maxHeight = 600
+            }
+        }
+    }
+}

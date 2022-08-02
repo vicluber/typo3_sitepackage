@@ -1,1 +1,4 @@
-# typo3_sitepackage
+Sitepackage for the project "suedbahnhotel Website"
+==============================================================
+
+Add some explanation here.

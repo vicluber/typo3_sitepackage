@@ -1,0 +1,27 @@
+<div class="py-5 px-0">
+    <div class="container">
+        <div class="row">
+            <f:for each="{data.tx_mask_video_cards}" as="videoCard">
+                <div class="col-12 col-lg-4 py-3">
+                    <div class="bg-white h4 p-5 m-0">
+                        <f:if condition="{videoCard.tx_mask_video_title}">
+                            {videoCard.tx_mask_video_title}
+                        </f:if>
+                    </div>
+                    <div id="img-diag-cut" class="home-video-link-image">
+                        <f:if condition="{videoCard.tx_mask_video_thumbnail}">
+                            <f:for each="{videoCard.tx_mask_video_thumbnail}" as="file">
+                                <f:if condition="{file.properties.link}">
+                                    <f:link.typolink parameter="{file.properties.link}">
+                                        <f:image src="EXT:suedbahnhotel_website/Resources/Public/Images/video-button.svg" width="100" height="100" class="play-icon" />
+                                        <f:image image="{file}" class="video-thumbnail" />
+                                    </f:link.typolink>
+                                </f:if>
+                            </f:for>
+                        </f:if>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </div>
+</div>

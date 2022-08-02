@@ -1,0 +1,25 @@
+##################################################
+### CONTENT ELEMENT SETTINGS                   ###
+### Shared settings for TYPO3 content elements ###
+##################################################
+lib.contentElement {
+    templateRootPaths {
+        200 = EXT:suedbahnhotel_website/Resources/Private/Templates/ContentElements/
+        210 = {$plugin.suedbahnhotel_website_contentelements.view.templateRootPath}
+    }
+    partialRootPaths {
+        200 = EXT:suedbahnhotel_website/Resources/Private/Partials/ContentElements/
+        210 = {$plugin.suedbahnhotel_website_contentelements.view.partialRootPath}
+    }
+    #layoutRootPaths {
+    #    200 = EXT:suedbahnhotel_website/Resources/Private/Layouts/ContentElements/
+    #    210 = {$plugin.suedbahnhotel_website_contentelements.view.layoutRootPath}
+    #}
+    settings {
+        media {
+            maxWidth = {$styles.content.news.detail.maxWidth}
+            maxHeight = {$styles.content.news.list.maxHeight}
+            maxThumbnailMenuWidth = {$styles.content.news.list.maxWidth}
+        }
+    }
+}

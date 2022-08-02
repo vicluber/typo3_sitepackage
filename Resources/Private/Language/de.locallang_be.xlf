@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file target-language="en" datatype="plaintext" original="messages" date="2021-06-18UTC12:28:060">
+        <header>
+            <authorName>Hebotek</authorName>
+            <authorEmail>support@hebotek.at</authorEmail>
+        </header>
+        <body>
+            <!-- Custom CE - Thumbnail Menu -->
+            <trans-unit id="thumbnail_menu.wizard.title">
+                <source>Thumbnail Menü</source>
+                <target>Thumbnail Menü</target>
+            </trans-unit>
+            <trans-unit id="thumbnail_menu.wizard.description">
+                <source>Listet Unterseiten mit ihren Bildern</source>
+                <target>Listet Unterseiten mit ihren Bildern</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

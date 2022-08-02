@@ -1,0 +1,89 @@
+/* Custom Variables */
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+$font: BrandonGrotesque;
+
+// font-sizes:
+
+$font-size-h1: 2.9rem;
+$font-size-h2: 1.5rem;
+$font-size-h3: 1.8rem;
+$font-size-h4: 1.2rem;
+$font-size-h5: 1rem;
+$font-size-very-small: 0.5rem;
+$font-size-small: 0.7rem;
+$font-size-bigger: 0.9rem;
+$font-size-regular: 1rem;
+
+$venue-letterspacing: 1px;
+$headline-letterpsacing: 2px;
+$default-letterspacing: 0.5px;
+
+//custom variables:
+
+$border-red: 1px solid #D80E00;
+$text-spacing: 66%;
+$viewport-desktop: 1200px;
+
+// Suedbahnhotel-kultur Color system
+
+$primary-color: #ffefb4;
+$secondary-color: #f9db7e;
+$terthiary-color: #F8F4E4;
+$quaternary-color: #7c786d;
+$dark: #5a5546;
+
+$white:    #fff !default;
+$orange: #d8482c !default;
+$green: #198c7d !default;
+$red: #D80E00 !default;
+$dark-red: #AC2215;
+$light-red: #d80e00;
+$textpic-background-color: #E8DAA7;
+
+//light-gray; warmes hellgrau HGMODULE/ Secondary Buttons /Tags
+$light-gray: #676767 !default;
+$gray-100: #f7f7f7 !default;
+$gray-200: #f7f7f7 !default;
+
+// gray; neutrales Grau: Trennlinien, raender, inputs
+
+$gray: #e6e6e6 !default;
+$grey: $gray;
+$gray-300: #e6e6e6 !default;
+$gray-400: #e6e6e6 !default;
+$gray-500: #e6e6e6 !default;
+$gray-600: #e6e6e6 !default;
+
+// dark-gray; hg hover sekundarybuttons/tags
+$dark-gray: #303030 !default;
+$gray-700: #676767;
+$gray-800: #303030 !default;
+$gray-900: #303030 !default;
+$black:    #000000 !default;
+
+$font-color: $black;
+
+//spaces
+$spaces-extra-small: 20px;
+$spaces-small: 40px;
+$spaces-medium: 70px;
+$spaces-large: 100px;
+
+// OVERWRITING BOOTSTRAP DEFAULTS scss-docs-start container-max-widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1530px
+) !default;
+// OVERWRITING BOOTSTRAP DEFAULTS scss-docs-end container-max-widths
+
+$pagination-active-bg:        $red;
+$line-height-base:            1.2 !default;
+$line-height-sm:              1.25 !default;
+$line-height-lg:              2 !default;

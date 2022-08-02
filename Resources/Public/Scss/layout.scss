@@ -1,0 +1,42 @@
+// Functions
+@import "Modules/functions";
+
+// Variables
+@import 'bootstrap-overrides';
+@import 'variables';
+
+// Import Bootstrap Components and Variables
+@import "Lib/bootstrap";
+
+// Modules
+// import your modules here
+@import "Modules/general";
+
+// Footer
+@import "Modules/footer";
+
+// Icons
+@import "Modules/icons";
+
+// Cookieman
+@import "Modules/cookieman";
+
+// Fonts
+@import "Modules/fonts";
+
+// News
+@import "Modules/news";
+
+// Mask elements
+@import "Modules/mask";
+
+// Import Slick slider Lib and css
+@import "Lib/Slick/slick";
+@import "Lib/Slick/slick-theme";
+@import "Modules/slickslider";
+
+// Wibs style
+@import "Modules/wibsaccordion";
+
+// Search style
+@import "Modules/search";

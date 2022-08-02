@@ -1,0 +1,12 @@
+<div class="header-badge-container position-relative d-block">
+    <f:for each="{data.tx_mask_badge_image}" as="file">
+        <f:if condition="{data.tx_mask_badge_button_link}">
+            <div class="header-badge">
+                <f:link.typolink parameter="{data.tx_mask_badge_button_link}">
+                    <f:image image="{file}" width="200" />
+                    {file.description}
+                </f:link.typolink>
+            </div>
+        </f:if>
+    </f:for>
+</div>

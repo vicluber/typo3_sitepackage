@@ -1,0 +1,63 @@
+<div class="container-break-out {f:if(condition: '{iterator.index} % 2 == 0', then: 'bg-primary', else: 'bg-terthiary')}">
+    <div class="container">
+        <div class="row event-item-container">
+            <div class="col-1 d-xs-none d-sm-none d-md-none d-lg-none d-xl-block"></div>
+            <div class="col-12 col-md-4 col-xl-4 col-xxl-4 py-2 pt-sm-5 px-0 py-md-5 px-md-0 py-lg-5">
+                <div class="py-2 h1 m-0">
+                    <span class="event-date">
+                        <f:format.date format="%d. %m.">{newsItem.datetime}</f:format.date>
+                    </span>
+                    <span class="event-time">
+                        <f:format.date format="H:i">{newsItem.datetime}</f:format.date>
+                    </span>
+                </div>
+                <div class="event-place">{newsItem.location.title}</div>
+                <f:if condition="{newsItem.mediaPreviews}">
+                    <!-- media preview element -->
+                    <f:then>
+                        <div class="event-item-image-container pe-0 pe-lg-5">
+                            <f:variable name="imageRendered" value="0" />
+                            <f:for each="{newsItem.mediaPreviews}" as="mediaElement">
+                                <f:if condition="{mediaElement.showinpreview} == 2">
+                                    <f:if condition="{mediaElement.originalResource.type} == 2 && {imageRendered} == 0">
+                                        <f:variable name="imageRendered" value="1" />
+                                        <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+                                    </f:if>
+                                    <div class="copyright" data-slider-item-index="1">
+                                        <span class="image-copyright">&copy; Foto: {mediaElement.originalResource.originalFile.properties.copyright}</span>
+                                    </div>
+                                </f:if>
+                            </f:for>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{settings.displayDummyIfNoMedia}">
+                            <div class="news-img-wrap">
+                                <span class="no-media-element">
+                                    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                                        <f:image src="{settings.list.media.dummyImage}" title="" alt="" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+                                    </n:link>
+                                </span>
+                            </div>
+                        </f:if>
+                    </f:else>
+                </f:if>
+            </div>
+            <div class="col-12 col-md-8 col-xl-7 col-xxl-7 py-2 pb-sm-5 px-0 py-md-5 px-md-4 py-lg-5 pe-lg-0 pe-md-0">
+                <div class="py-2 h1 m-0">
+                    <n:link class="text-decoration-none" newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                        {newsItem.title}
+                    </n:link>
+                </div>
+                <div class="py-3 fw-500">
+                    {newsItem.teaser}
+                </div>
+                <div class="py-4">
+                    <n:link class="primary-button text-uppercase" newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                        <f:translate key="LLL:EXT:suedbahnhotel_website/Resources/Private/Language/de.locallang.xlf:frontend_layout.buy_ticket_button" />
+                    </n:link>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

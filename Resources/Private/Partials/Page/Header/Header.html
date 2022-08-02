@@ -1,0 +1,90 @@
+<!--Starts top navbar with logo (color depend on layout) and action icons/buttons-->
+<div class="container-fluid main-header d-none d-sm-block sticky-top {f:if(condition: '{data.backend_layout} == pagets__startpage', then: '', else: 'bg-white')}">
+  <div class="container d-flex justify-content-between h-100">
+    <!--Starts logo (color depend on backend layout)-->
+    <f:if condition="{data.layout} == '1'">
+      <f:then>
+        <div class="logo-container">
+          <f:link.page pageUid="1">
+            <f:image src="EXT:suedbahnhotel_website/Resources/Public/Images/Logo-weiss.svg" class="logo-image" />
+          </f:link.page>
+        </div>
+      </f:then>
+      <f:else>
+        <div class="logo-container">
+          <f:link.page pageUid="1">
+            <f:image src="EXT:suedbahnhotel_website/Resources/Public/Images/Logo-schwarz.svg" class="logo-image" />
+          </f:link.page>
+        </div>
+      </f:else>
+    </f:if>
+    <!--Starts action icon buttons for search, calendar and sidbar menu toggle -->
+    <div class="actions d-none d-md-inline-flex {f:if(condition: '{data.layout} == 1', then: 'actions-white', else: 'actions-black')}">
+      <f:if condition="{settings.search.searchPid}">
+        <button class="btn px-1">
+          <f:link.page pageUid="{settings.search.searchPid}">
+            <span class="h4 fw-light align-middle">
+              <i class="icon icon-search icon-md {f:if(condition: '{data.layout} == 1', then: 'bg-white', else: 'bg-black')}"></i>
+            </span>
+          </f:link.page>
+        </button>
+      </f:if>
+      <f:if condition="{settings.header.calendarPid}">
+        <button class="btn px-1">
+          <f:link.page pageUid="{settings.header.calendarPid}">
+              <span class="h4 fw-light align-middle">
+                <i class="icon icon-calendar icon-md {f:if(condition: '{data.layout} == 1', then: 'bg-white', else: 'bg-black')}"></i>
+              </span>
+          </f:link.page>
+        </button>
+      </f:if>
+      <button class="btn px-1">
+        <span class="btn p-0 ps-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">
+          <span class="h4 fw-light align-middle">
+            <i class="icon icon-hamburger icon-md {f:if(condition: '{data.layout} == 1', then: 'bg-white', else: 'bg-black')}"></i>
+          </span>
+          <span class="p-0 fw-light text-uppercase menu-word {f:if(condition: '{data.layout} == 1', then: 'text-white', else: 'text-black')}">
+            <f:translate key="LLL:EXT:suedbahnhotel_website/Resources/Private/Language/de.locallang.xlf:frontend_layout.menu_open" />
+          </span>
+        </span>
+      </button>
+    </div>
+    <div class="actions-mobile d-flex d-md-none d-inline-block {f:if(condition: '{data.layout} == 1', then: 'actions-white', else: 'actions-black')}">
+      <button class="btn p-0 ps-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">
+        <a href="#">
+          <span class="h4 fw-light text-light">
+            <i class="icon icon-hamburger icon-md {f:if(condition: '{data.layout} == 1', then: 'bg-white', else: 'bg-black')}"></i>
+          </span>
+        </a>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-between d-sm-none container mobile-main-header sticky-top bg-white">
+  <div class="">
+    <f:link.page pageUid="1">
+      <f:image src="EXT:suedbahnhotel_website/Resources/Public/Images/Logo-schwarz.svg" class="mobile-logo-image" />
+    </f:link.page>
+  </div>
+  <div class="actions-black d-flex">
+    <f:if condition="{settings.search.searchPid}">
+      <button class="btn px-1">
+        <f:link.page pageUid="{settings.search.searchPid}">
+          <span class="h4 fw-light"><i class="icon icon-search icon-md bg-black"></i></span>
+        </f:link.page>
+      </button>
+    </f:if>
+    <f:if condition="{settings.header.calendarPid}">
+      <button class="btn px-1">
+        <f:link.page pageUid="{settings.header.calendarPid}">
+          <span class="h4 fw-light"><i class="icon icon-calendar icon-md bg-black"></i></span>
+        </f:link.page>
+      </button>
+    </f:if>
+    <button class="btn p-0 ps-1 pt-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">
+      <a href="#">
+        <span class="h4 fw-light"><i class="icon icon-hamburger icon-md bg-black"></i></span>
+      </a>
+    </button>
+  </div>
+</div>

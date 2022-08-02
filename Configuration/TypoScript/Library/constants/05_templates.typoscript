@@ -1,0 +1,6 @@
+fluidpath.layouts   = EXT:suedbahnhotel_website/Resources/Private/Layouts/
+fluidpath.templates = EXT:suedbahnhotel_website/Resources/Private/Templates/
+fluidpath.partials  = EXT:suedbahnhotel_website/Resources/Private/Partials/
+
+plugin.suedbahnhotel_website_contentelements.view.templateRootPath = EXT:suedbahnhotel_website/Resources/Private/Templates/ContentElements/
+plugin.suedbahnhotel_website_contentelements.view.partialRootPaths = EXT:suedbahnhotel_website/Resources/Private/Partials/ContentElements/

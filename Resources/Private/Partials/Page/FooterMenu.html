@@ -1,0 +1,16 @@
+<ul class="list-unstyled flex-wrap {f:if(condition: '{class}', then: '{class}', else:'')}">
+    <f:for each="{menu}" as="item">
+        <li class="{f:if(condition: item.active, then:'active')}">
+            <f:link.typolink 	parameter="{item.link}" 
+                                target="{item.target}" 
+                                class="nav-link">
+                {item.title}
+            </f:link.typolink>
+        </li>
+    </f:for>
+    <li>
+        <a href="javascript:void(0)" onclick="cookieman.show()" class="nav-link">
+            <f:translate key="LLL:EXT:blaguss_website/Resources/Private/Language/locallang.xlf:privacy-settings" />
+        </a>
+    </li>
+</ul>

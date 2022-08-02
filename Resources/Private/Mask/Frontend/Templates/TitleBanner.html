@@ -1,0 +1,13 @@
+<div class="mask_title_banner frame-layout-{data.tx_mask_bgcolor} frame-space-before-{data.space_before_class} frame-space-after-{data.space_before_class} frame-{data.frame_class} text-center p-5">
+    <f:if condition="{data.tx_mask_title_banner}">
+        <div><span class="tx_mask_title_banner">{data.tx_mask_title_banner}</span></div>
+    </f:if>
+    <f:if condition="{data.tx_mask_subtitle_banner}">
+        <div><span class="tx_mask_subtitle_banner">{data.tx_mask_subtitle_banner}</span></div>
+    </f:if>
+    <f:if condition="{data.tx_mask_link_text}">
+        <f:if condition="{data.tx_mask_link_banner}">
+            <f:link.typolink class="tx_mask_link_banner" parameter="{data.tx_mask_link_banner}">{data.tx_mask_link_text}</f:link.typolink>
+        </f:if>
+    </f:if>
+</div>
